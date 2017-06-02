@@ -1,0 +1,21 @@
+#!/bin/bash
+
+TMP_DIR="${TMPDIR}"
+BASENAME="$(basename $0)"
+
+test -z "${TMP_DIR}" && TMP_DIR="."
+TMP_FILE="${TMP_DIR}/tmp-${BASENAME}-$$"
+
+cifparse --no-report-long-items --fix "$@" > ${TMP_FILE} 2>&1
+
+if grep -q 'OK$' ${TMP_FILE}
+then
+    if [ "$(cat ${TMP_FILE} | wc -l)" != 1 ]
+    then
+        echo WARNING
+    fi
+else
+    echo ERROR
+fi
+
+rm "${TMP_FILE}"

@@ -1,0 +1,26 @@
+#!/bin/bash
+
+TMP_DIR="${TMPDIR}"
+BASENAME="$(basename $0)"
+
+test -z "${TMP_DIR}" && TMP_DIR="."
+TMP_FILE="${TMP_DIR}/tmp-${BASENAME}-$$"
+
+timeout 30 perl ${HOME}/src/STAR-Parser-0.59/bin/parse.pl "$@" > ${TMP_FILE} 2>&1
+
+if [ "$?" == 124 ]
+then
+    echo --
+else
+    if [ -s ${TMP_FILE} ]
+    then
+        if grep -q '^fatal parsing error in category' ${TMP_FILE}
+        then
+            echo ERROR
+        else
+            echo WARNING
+        fi
+    fi
+fi
+
+rm "${TMP_FILE}"

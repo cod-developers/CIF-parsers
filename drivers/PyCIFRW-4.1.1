@@ -1,0 +1,20 @@
+#!/bin/bash
+
+TMP_DIR="${TMPDIR}"
+BASENAME="$(basename $0)"
+
+test -z "${TMP_DIR}" && TMP_DIR="."
+TMP_FILE="${TMP_DIR}/tmp-${BASENAME}-$$"
+
+export PYTHONPATH=~/src/PyCifRW-4.1.1/dist-packages/lib/python2.7/site-packages
+
+pycifrw-parse "$@" > ${TMP_FILE} 2>&1
+
+if grep -q ^CifFile.StarFile.StarError ${TMP_FILE}
+then
+    echo ERROR
+else
+    test -s ${TMP_FILE} && echo WARNING
+fi
+
+rm "${TMP_FILE}"

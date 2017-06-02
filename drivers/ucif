@@ -1,0 +1,16 @@
+#!/bin/bash
+
+TMP_DIR="${TMPDIR}"
+BASENAME="$(basename $0)"
+
+test -z "${TMP_DIR}" && TMP_DIR="."
+TMP_FILE="${TMP_DIR}/tmp-${BASENAME}-$$"
+
+${HOME}/src/ucif/examples/cif_parser "$@" > ${TMP_FILE} 2>&1
+
+if ! grep -q 'Congratulations' ${TMP_FILE}
+then
+    echo ERROR
+fi
+
+rm "${TMP_FILE}"

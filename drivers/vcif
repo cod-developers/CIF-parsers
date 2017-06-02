@@ -1,0 +1,18 @@
+#!/bin/bash
+
+TMP_DIR="${TMPDIR}"
+BASENAME="$(basename $0)"
+
+test -z "${TMP_DIR}" && TMP_DIR="."
+TMP_FILE="${TMP_DIR}/tmp-${BASENAME}-$$"
+
+vcif "$@" > ${TMP_FILE} 2>&1
+
+if grep -q '^ERROR' ${TMP_FILE}
+then
+    echo ERROR
+else
+    grep -q '^\(CIF ERROR\|WARNING\)' ${TMP_FILE} && echo WARNING
+fi
+
+rm "${TMP_FILE}"
