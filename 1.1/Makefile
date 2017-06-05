@@ -8,4 +8,10 @@ OUTPUTS = ${TESTS:${INP_DIR}/%=${OUT_DIR}/%.out}
 all: ${OUTPUTS}
 
 ${OUT_DIR}/%.out: ${INP_DIR}/%
-	-cifparse $< > $@
+	for PARSER in drivers/*; \
+    do \
+        $${PARSER} $< >> $@; \
+    done
+
+cleanAll distclean:
+	rm -f ${OUTPUTS}
