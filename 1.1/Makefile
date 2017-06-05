@@ -31,7 +31,7 @@ ${TABLE_TEX}: ${OUTPUTS}
 	done > $@
 
 ${TABLE_HTML}: ${OUTPUTS}
-	echo '<html><head></head><body><table border="1"><tr><td></td><td>' >> $@
+	echo '<html><head></head><body><table border="1"><tr><td></td><td>' > $@
 	perl -e '$$, = "</td><td>"; print @ARGV' $$(ls -1 drivers/* | xargs -n1 basename | sort) >> $@
 	echo '</td></tr>' >> $@
 	for OUTPUT in $+; \
