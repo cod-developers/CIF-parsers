@@ -10,7 +10,7 @@ all: ${OUTPUTS}
 ${OUT_DIR}/%.out: ${INP_DIR}/%
 	for PARSER in drivers/*; \
     do \
-        $${PARSER} $< >> $@; \
+        echo $$(basename $${PARSER}) $$($${PARSER} $<) >> $@; \
     done
 
 cleanAll distclean:
