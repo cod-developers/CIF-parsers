@@ -1,0 +1,26 @@
+# This file provides (in the format of tab-separated values) the
+# description of the test cases.
+#
+# Columns:
+# test_filename is_CIF_conforming
+dos-ctrl-z	0
+duplicate-tags-different-cases	0
+duplicate-tags-different-values	0
+duplicate-tags-same-values	0
+empty-datablock	1
+empty-file	1
+long-line	0
+loop-without-tags	0
+loop-without-values	0
+missing-closing-quote	0
+missing-data-header	0
+non-ascii	0
+null-symbol	0
+single-quote-in-value	1
+stray-values-at-start	0
+tag-immediately-following-textfield	0
+textfield-no-closing-semicolon	0
+value-immediately-following-textfield	0
+value-starting-with-bracket	0
+value-starting-with-dollar	0
+wrong-number-of-loop-values	0
