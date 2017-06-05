@@ -1,9 +1,9 @@
-PyCIFRW-3.6.2.1
-PyCIFRW-4.1.1
-STAR --
 cif2cif
 codtools ERROR
 codtools-fix ERROR
+PyCIFRW-3.6.2.1
+PyCIFRW-4.1.1
+STAR --
 startools
 ucif ERROR
 vcif ERROR
