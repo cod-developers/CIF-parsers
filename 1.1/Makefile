@@ -8,7 +8,7 @@ OUTPUTS = $(sort ${TESTS:${INP_DIR}/%=${OUT_DIR}/%.out})
 
 TABLE = ${OUT_DIR}/table.tex
 
-all: ${TABLE}
+all table: ${TABLE}
 
 ${OUT_DIR}/%.out: ${INP_DIR}/%
 	for PARSER in $$(ls -1 drivers/* | sort); \
@@ -17,7 +17,7 @@ ${OUT_DIR}/%.out: ${INP_DIR}/%
     done
 
 cleanAll distclean:
-	rm -f ${OUTPUTS}
+	rm -f ${OUTPUTS} ${TABLE}
 
 ${TABLE}: ${OUTPUTS}
 	for OUTPUT in $+; \
