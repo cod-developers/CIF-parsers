@@ -3,6 +3,7 @@ codtools ERROR
 codtools-fix
 PyCIFRW-3.6.2.1 ERROR
 PyCIFRW-4.1.1 WARNING
+PyCIFRW-4.2 WARNING
 STAR
 startools WARNING
 ucif ERROR
