@@ -24,8 +24,9 @@ ${TABLE_TEX}: ${OUTPUTS}
 	for OUTPUT in $+; \
 	do \
 		( \
-			echo $${OUTPUT}; \
-			perl -ne 'my @a = split /\s/; print " & ", $$a[1]' $${OUTPUT}; \
+			echo $${OUTPUT} | sed 's/outputs\///'; \
+			perl -lpe 's/([WE])\w+/$$1/g; ' $${OUTPUT} | \
+			perl -ne 'my @a = split /\s/; print " & ", $$a[1]'; \
 			echo \\\\\\\\ \
 		) \
 	done > $@
