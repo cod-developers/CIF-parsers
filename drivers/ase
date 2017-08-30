@@ -1,0 +1,4 @@
+#!/bin/bash
+
+python -c "import sys; from ase.io.cif import parse_cif; cif = parse_cif( '$1' )" 2>&1 \
+    | grep -q UserWarning && echo WARNING
