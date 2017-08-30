@@ -25,7 +25,7 @@ ${TABLE_TEX}: ${OUTPUTS}
 	do \
 		( \
 			echo $${OUTPUT} | sed 's/outputs\///'; \
-			perl -lpe 's/([WE])\w+/$$1/g; ' $${OUTPUT} | \
+			perl -lpe 's/WARNING/\//g; s/ERROR/\$$\\times\$$/g;' $${OUTPUT} | \
 			perl -ne 'my @a = split /\s/; print " & ", $$a[1]'; \
 			echo \\\\\\\\ \
 		) \
