@@ -26,6 +26,13 @@ Tested CIF v2.0 parsers
 * [COD::CIF::Parser of cod-tools](http://wiki.crystallography.net/cod-tools/)
 * [PyCIFRW](https://bitbucket.org/jamesrhester/pycifrw/)
 
+Structure
+---------
+
+Drivers for parsers are located at [1.1/drivers/](1.1/drivers/) and
+[2.0/drivers/](2.0/drivers/). Tests are located at 
+[1.1/tests/](1.1/tests/) and [2.0/tests/](2.0/tests/).
+
 Reporting and Contribution
 --------------------------
 
