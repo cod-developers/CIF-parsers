@@ -20,11 +20,20 @@ Tested CIF v1.1 parsers
 * [vcif and vcif2](http://www.iucr.org/resources/cif/software/archived/vcif-1.2)
 * [ZINC](http://www.iucr.org/__data/iucr/cif/software/zinc/doc/zinc-paper.pdf)
 
+Parsers to be tested:
+
+* [mmCIF parser](https://github.com/gjbekker/cif-parsers)
+* [CIF API](https://github.com/COMCIFS/cif_api)
+
 Tested CIF v2.0 parsers
 -----------------------
 
 * [COD::CIF::Parser of cod-tools](http://wiki.crystallography.net/cod-tools/)
 * [PyCIFRW](https://bitbucket.org/jamesrhester/pycifrw/)
+
+Parsers to be tested:
+
+* [CIF API](https://github.com/COMCIFS/cif_api)
 
 Structure
 ---------
