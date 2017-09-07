@@ -13,6 +13,7 @@ Tested CIF v1.1 parsers
 
 * [Atomic Simulation Environment (ASE)](http://wiki.fysik.dtu.dk/ase)
 * [cif2cif](http://doi.org/10.1107/S0021889896006371)
+* [CIF API](https://github.com/COMCIFS/cif_api)
 * [COD::CIF::Parser of cod-tools](http://wiki.crystallography.net/cod-tools/)
 * [PyCIFRW](https://bitbucket.org/jamesrhester/pycifrw/)
 * [STAR::Parser](http://pdb.sdsc.edu/STAR/index.html)
@@ -23,7 +24,6 @@ Tested CIF v1.1 parsers
 Parsers to be tested:
 
 * [mmCIF parser](https://github.com/gjbekker/cif-parsers)
-* [CIF API](https://github.com/COMCIFS/cif_api)
 
 Tested CIF v2.0 parsers
 -----------------------
