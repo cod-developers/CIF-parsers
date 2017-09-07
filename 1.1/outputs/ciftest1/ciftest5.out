@@ -1,11 +1,11 @@
 ase
-cif2cif --
+cif2cif
+cif_linguist ERROR
 codtools
 codtools-fix
-PyCIFRW-3.6.2.1 ERROR
 PyCIFRW-4.1.1 ERROR
-PyCIFRW-4.2 ERROR
-STAR ERROR
+PyCIFRW-4.2 WARNING
+STAR
 startools
 ucif ERROR
 vcif
