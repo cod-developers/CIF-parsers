@@ -1,0 +1,3 @@
+#!/bin/bash
+
+../drivers/cif_linguist -f cif11 "$@"
