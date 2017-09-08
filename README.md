@@ -28,12 +28,9 @@ Parsers to be tested:
 Tested CIF v2.0 parsers
 -----------------------
 
+* [CIF API](https://github.com/COMCIFS/cif_api)
 * [COD::CIF::Parser of cod-tools](http://wiki.crystallography.net/cod-tools/)
 * [PyCIFRW](https://bitbucket.org/jamesrhester/pycifrw/)
-
-Parsers to be tested:
-
-* [CIF API](https://github.com/COMCIFS/cif_api)
 
 Structure
 ---------
