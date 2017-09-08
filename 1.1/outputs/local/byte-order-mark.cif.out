@@ -1,0 +1,13 @@
+ase
+cif2cif
+cif_linguist ERROR
+codtools ERROR
+codtools-fix WARNING
+PyCIFRW-4.1.1 WARNING
+PyCIFRW-4.2 WARNING
+STAR
+startools
+ucif ERROR
+vcif ERROR
+vcif2 WARNING
+zinc ERROR
