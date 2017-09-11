@@ -3,6 +3,7 @@ cif2cif
 cif_linguist ERROR
 codtools WARNING
 codtools-fix WARNING
+gemmi
 PyCIFRW-4.1.1
 PyCIFRW-4.2
 STAR

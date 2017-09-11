@@ -3,6 +3,7 @@ cif2cif
 cif_linguist ERROR
 codtools ERROR
 codtools-fix ERROR
+gemmi ERROR
 PyCIFRW-4.1.1 ERROR
 PyCIFRW-4.2 WARNING
 STAR
