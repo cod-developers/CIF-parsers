@@ -12,13 +12,20 @@ OUTPUTS = $(sort ${TESTS:${INP_DIR}/%=${OUT_DIR}/%.out})
 TABLE_TEX  = ${OUT_DIR}/table.tex
 TABLE_HTML = ${OUT_DIR}/table.html
 
+BENCHMARK_OUT = ${OUT_DIR}/benchmark.out
+
 all table: ${TABLE_TEX} ${TABLE_HTML}
+
+benchmark: ${BENCHMARK_OUT}
 
 ${OUT_DIR}/%.out: ${INP_DIR}/%
 	for PARSER in $$(ls -1 drivers/* | sort); \
     do \
         echo $$(basename $${PARSER}) $$($${PARSER} $<) >> $@; \
     done
+
+${BENCHMARK_OUT}:
+	../scripts/benchmark > $@
 
 cleanAll distclean:
 	rm -f ${OUTPUTS} ${TABLE_TEX} ${TABLE_HTML}
