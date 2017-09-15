@@ -16,6 +16,27 @@ NFILES=$(cat ${TMP_FILE} | wc -l)
 SIZE=$(du -chs ${INPUT_DIR} | grep total | awk '{print $1}')
 
 NCPU=$(grep ^processor /proc/cpuinfo | wc -l)
+CPU_MODEL=$(grep '^model name' /proc/cpuinfo | head -n1 | cut -d ':' -f 2)
+MEMTOTAL=$(grep ^MemTotal /proc/meminfo | awk '{print $2}' | xargs -i expr {} / 1048576)
+
+OS=$(lsb_release -a 2>/dev/null | grep ^Description: | cut -f 2)
+
+GCC_VERSION=$(gcc --version | head -n1 | awk '{print $NF}')
+PERL_VERSION=$(perl --version | perl -lne 'print $1 if /\(v([^\)]+)\)/')
+PYTHON_VERSION=$(python --version 2>&1 | awk '{print $2}')
+F77_VERSION=$(f77 -v 2>&1 | perl -lne 'print $1 if /Version (\S+)/')
+
+echo SVNREVISION ${SVNREVISION}
+echo NFILES ${NFILES}
+echo SIZE ${SIZE}
+echo NCPU ${NCPU}
+echo CPU_MODEL ${CPU_MODEL}
+echo MEMTOTAL ${MEMTOTAL}
+echo OS ${OS}
+echo GCC_VERSION ${GCC_VERSION}
+echo PERL_VERSION ${PERL_VERSION}
+echo PYTHON_VERSION ${PYTHON_VERSION}
+echo F77_VERSION ${F77_VERSION}
 
 for PARSER in $(ls -1 drivers/* | sort)
 do
