@@ -22,8 +22,9 @@ do
     TIME=$(
         (
             time cat ${TMP_FILE} \
-                | xargs --max-args 1 --max-procs ${NCPU} \
-                        tests/parsers/${PARSER} >/dev/null 2>&1
+                | xargs --max-args 1 \
+                        --max-procs ${NCPU} \
+                        ${PARSER} >/dev/null 2>&1
         ) 2>&1 \
         | grep ^real \
         | awk '{print $2}' \
