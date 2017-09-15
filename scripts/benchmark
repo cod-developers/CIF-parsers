@@ -32,3 +32,5 @@ do
 
     echo ${PARSER} ${TIME}
 done
+
+rm ${TMP_FILE}
