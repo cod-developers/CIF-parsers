@@ -1,0 +1,3 @@
+# Constructed from http://www.crystallography.net/cod/1545320.cif@194863
+data_1545320
+_refine_ls_extinction_expression Fc^*^=kFc[1+0.001xFc^2^\l^3^/sin(2\q)]^-1/4^
