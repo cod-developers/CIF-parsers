@@ -11,10 +11,11 @@ OUTPUTS = $(sort ${TESTS:${INP_DIR}/%=${OUT_DIR}/%.out})
 
 TABLE_TEX  = ${OUT_DIR}/table.tex
 TABLE_HTML = ${OUT_DIR}/table.html
+TABLE_MD   = ${OUT_DIR}/table.md
 
 BENCHMARK_OUT = ${OUT_DIR}/benchmark.out
 
-all table: ${TABLE_TEX} ${TABLE_HTML}
+all table: ${TABLE_TEX} ${TABLE_HTML} ${TABLE_MD}
 
 benchmark: ${BENCHMARK_OUT}
 
@@ -55,3 +56,18 @@ ${TABLE_HTML}: ${OUTPUTS}
 		) \
 	done >> $@
 	echo '</table></html>' >> $@
+
+${TABLE_MD}: ${OUTPUTS}
+	echo '<table border="1"><tr><td></td><td>' > $@
+	perl -e '$$, = "</td><td>"; print @ARGV' $$(ls -1 drivers/* | xargs -n1 basename | sort) >> $@
+	echo '</td></tr>' >> $@
+	for OUTPUT in $+; \
+	do \
+		( \
+			echo '<tr><td>' $${OUTPUT}; \
+			perl -lpe 's/([WE])\w+/$$1/g; ' $${OUTPUT} | \
+			perl -ne 'my @a = split /\s/; print "</td><td>", $$a[1]'; \
+			echo '</td></tr>' \
+		) \
+	done >> $@
+	echo '</table>' >> $@
