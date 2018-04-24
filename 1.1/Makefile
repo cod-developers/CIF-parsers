@@ -37,7 +37,7 @@ ${TABLE_TEX}: ${OUTPUTS}
 		( \
 			echo $${OUTPUT} \
 			| sed 's/outputs\///; s/_/\\_/g; s/\.out$$/ \&/'; \
-			grep $$(basename $${OUTPUT} .out) \
+			grep -P "^$$(basename $${OUTPUT} .out)\t" \
 				tests/$$(echo $${OUTPUT} | cut -d / -f 2)/descriptions.tsv \
 			| cut -f 2 | sed 's/1//; s/0/\$$\\times\$$/'; \
 			perl -lpe 's/WARNING/\//g; s/ERROR/\$$\\times\$$/g;' $${OUTPUT} | \
