@@ -1,0 +1,17 @@
+# This file provides (in the format of tab-separated values) the
+# description of the test cases.
+#
+# Columns:
+# test_filename is_CIF_conforming
+ciftest0	1
+ciftest1	1
+ciftest2	1
+ciftest3	1
+ciftest4	1
+ciftest5	1
+ciftest6	0
+ciftest7	0
+ciftest8	0
+ciftest9	0
+ciftest10	0
+ciftest11	1
