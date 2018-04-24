@@ -35,7 +35,8 @@ ${TABLE_TEX}: ${OUTPUTS}
 	for OUTPUT in $+; \
 	do \
 		( \
-			echo $${OUTPUT} | sed 's/outputs\///; s/_/\\_/g'; \
+			echo $${OUTPUT} \
+			| sed 's/outputs\///; s/_/\\_/g; s/\.out$$//'; \
 			perl -lpe 's/WARNING/\//g; s/ERROR/\$$\\times\$$/g;' $${OUTPUT} | \
 			perl -ne 'my @a = split /\s/; print " & ", $$a[1]'; \
 			echo \\\\\\\\ \
