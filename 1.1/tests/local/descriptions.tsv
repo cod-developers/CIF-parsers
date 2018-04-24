@@ -5,6 +5,7 @@
 # test_filename is_CIF_conforming
 ascii-127.cif	0
 byte-order-mark.cif	0
+closing-bracket.cif	0
 empty-datablock-name.cif	0
 global.cif	0
 non-ascii-in-comment.cif	0
