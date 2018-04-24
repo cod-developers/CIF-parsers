@@ -7,7 +7,7 @@ ascii-127.cif	0
 byte-order-mark.cif	0
 empty-datablock-name.cif	0
 global.cif	0
-non-ascii-in-comment.cif	1
+non-ascii-in-comment.cif	0
 _refine_ls_extinction_expression.cif	1
 textfield-in-loop.cif	1
 unquoted-loop-prefix.cif	1
