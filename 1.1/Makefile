@@ -35,8 +35,11 @@ ${TABLE_TEX}: ${OUTPUTS}
 	for OUTPUT in $+; \
 	do \
 		( \
-			echo $${OUTPUT} \
+			echo $${OUTPUT} \& \
 			| sed 's/outputs\///; s/_/\\_/g; s/\.out$$//'; \
+			grep $$(basename $${OUTPUT} .out) \
+				tests/$$(echo $${OUTPUT} | cut -d / -f 2)/descriptions.tsv \
+			| cut -f 2 | sed 's/1//; s/0/\$$\\times\$$/'; \
 			perl -lpe 's/WARNING/\//g; s/ERROR/\$$\\times\$$/g;' $${OUTPUT} | \
 			perl -ne 'my @a = split /\s/; print " & ", $$a[1]'; \
 			echo \\\\\\\\ \
