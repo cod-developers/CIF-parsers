@@ -35,8 +35,8 @@ ${TABLE_TEX}: ${OUTPUTS}
 	for OUTPUT in $+; \
 	do \
 		( \
-			echo $${OUTPUT} \& \
-			| sed 's/outputs\///; s/_/\\_/g; s/\.out$$//'; \
+			echo $${OUTPUT} \
+			| sed 's/outputs\///; s/_/\\_/g; s/\.out$$/ \&/'; \
 			grep $$(basename $${OUTPUT} .out) \
 				tests/$$(echo $${OUTPUT} | cut -d / -f 2)/descriptions.tsv \
 			| cut -f 2 | sed 's/1//; s/0/\$$\\times\$$/'; \
