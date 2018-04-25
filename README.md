@@ -18,6 +18,7 @@ Tested CIF v1.1 parsers
 * [gemmi](https://github.com/project-gemmi/gemmi.git)
 * [PyCIFRW](https://bitbucket.org/jamesrhester/pycifrw/)
 * [STAR::Parser](http://pdb.sdsc.edu/STAR/index.html)
+* [StarTools](http://www.globalphasing.com/startools/)
 * [ucif](http://doi.org/10.1107/S0021889811041161)
 * [vcif and vcif2](http://www.iucr.org/resources/cif/software/archived/vcif-1.2)
 * [ZINC](http://www.iucr.org/__data/iucr/cif/software/zinc/doc/zinc-paper.pdf)
