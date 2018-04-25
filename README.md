@@ -26,6 +26,7 @@ Tested CIF v1.1 parsers
 Parsers to be tested:
 
 * [mmCIF parser](https://github.com/gjbekker/cif-parsers)
+* [OpenBabel](https://github.com/openbabel/openbabel)
 
 Tested CIF v2.0 parsers
 -----------------------
