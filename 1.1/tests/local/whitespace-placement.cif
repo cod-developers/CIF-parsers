@@ -1,0 +1,20 @@
+        data_test
+    _tag1
+
+            ' value '
+    _tag2
+
+
+;value # comment is a part of value here
+;
+
+loop_ _a _b A B C D E F
+loop_ _c # comment
+                _d
+_e
+        A
+    B # comment
+
+;
+C
+;   data_test2  _tag1 value
