@@ -78,6 +78,8 @@ ase</td><td>cif2cif</td><td>cif_linguist</td><td>codtools</td><td>codtools-fix</
 </td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>W</td><td>W</td><td></td></tr>
 <tr><td> outputs/local/empty-datablock-name.cif.out
 </td><td></td><td></td><td>E</td><td>E</td><td>W</td><td>E</td><td>E</td><td>W</td><td></td><td>W</td><td>E</td><td>E</td><td>W</td><td></td></tr>
+<tr><td> outputs/local/form-feed.cif.out
+</td><td></td><td>E</td><td>E</td><td></td><td></td><td>E</td><td>E</td><td>W</td><td></td><td></td><td></td><td></td><td>W</td><td></td></tr>
 <tr><td> outputs/local/global.cif.out
 </td><td></td><td>E</td><td>E</td><td>E</td><td>E</td><td>E</td><td>E</td><td>W</td><td></td><td></td><td>E</td><td></td><td></td><td>E</td></tr>
 <tr><td> outputs/local/non-ascii-in-comment.cif.out
@@ -88,6 +90,8 @@ ase</td><td>cif2cif</td><td>cif_linguist</td><td>codtools</td><td>codtools-fix</
 </td><td></td><td>E</td><td></td><td></td><td></td><td>E</td><td></td><td></td><td>E</td><td>W</td><td></td><td></td><td>W</td><td>E</td></tr>
 <tr><td> outputs/local/value-starting-with-closing-bracket.cif.out
 </td><td></td><td></td><td>E</td><td>E</td><td></td><td></td><td>W</td><td>W</td><td></td><td>W</td><td>E</td><td></td><td></td><td></td></tr>
+<tr><td> outputs/local/vertical-tab.cif.out
+</td><td></td><td>E</td><td>E</td><td></td><td></td><td>E</td><td>E</td><td>W</td><td></td><td></td><td>E</td><td></td><td>W</td><td></td></tr>
 <tr><td> outputs/local/whitespace-placement.cif.out
 </td><td>W</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 </table>
