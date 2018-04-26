@@ -1,6 +1,6 @@
 ase
 cif2cif
-cif_linguist ERROR
+cif_linguist
 codtools
 codtools-fix
 gemmi
@@ -9,6 +9,6 @@ PyCIFRW-4.2
 STAR
 startools
 ucif
-vcif
-vcif2
+vcif WARNING
+vcif2 WARNING
 zinc
