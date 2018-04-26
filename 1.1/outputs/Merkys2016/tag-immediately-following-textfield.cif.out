@@ -10,5 +10,5 @@ STAR
 startools WARNING
 ucif
 vcif ERROR
-vcif2
+vcif2 ERROR
 zinc

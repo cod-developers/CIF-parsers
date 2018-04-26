@@ -10,5 +10,5 @@ STAR ERROR
 startools WARNING
 ucif ERROR
 vcif ERROR
-vcif2
+vcif2 ERROR
 zinc --

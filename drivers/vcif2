@@ -8,7 +8,7 @@ TMP_FILE="${TMP_DIR}/tmp-${BASENAME}-$$"
 
 cif2cbf "$@" 2>${TMP_FILE} >/dev/null
 
-if grep -q '^CBFlib fatal error' ${TMP_FILE}
+if grep -qP '^CBFlib (fatal )?error' ${TMP_FILE}
 then
     echo ERROR
 else
