@@ -8,10 +8,12 @@ byte-order-mark.cif	0
 closing-bracket.cif	0
 comment-only.cif	1
 empty-datablock-name.cif	0
+form-feed.cif	0
 global.cif	0
 non-ascii-in-comment.cif	0
 _refine_ls_extinction_expression.cif	1
 textfield-in-loop.cif	1
 unquoted-loop-prefix.cif	1
 value-starting-with-closing-bracket.cif	0
+vertical-tab.cif	0
 whitespace-placement.cif	1
