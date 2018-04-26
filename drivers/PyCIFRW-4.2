@@ -10,7 +10,7 @@ export PYTHONPATH=~/install/PyCifRW/PyCifRW-4.2/usr/local/lib/python2.7/dist-pac
 
 pycifrw-parse "$@" > ${TMP_FILE} 2>&1
 
-if grep -q ^StarFile.StarError ${TMP_FILE}
+if grep -q ^CifFile.StarFile.StarError ${TMP_FILE}
 then
     echo ERROR
 else

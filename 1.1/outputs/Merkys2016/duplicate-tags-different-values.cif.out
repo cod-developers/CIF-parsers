@@ -5,7 +5,7 @@ codtools ERROR
 codtools-fix ERROR
 gemmi ERROR
 PyCIFRW-4.1.1 ERROR
-PyCIFRW-4.2 WARNING
+PyCIFRW-4.2 ERROR
 STAR
 startools
 ucif
