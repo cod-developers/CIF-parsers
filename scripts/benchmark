@@ -3,7 +3,7 @@
 TMP_DIR="${TMPDIR}"
 BASENAME="$(basename $0)"
 
-INPUT_DIR=~/struct/cod/cif
+INPUT_DIR=/var/data/users/andrius/struct/cod/cif
 
 test -z "${TMP_DIR}" && TMP_DIR="."
 TMP_FILE="${TMP_DIR}/tmp-${BASENAME}-$$"
@@ -38,7 +38,7 @@ echo PERL_VERSION ${PERL_VERSION}
 echo PYTHON_VERSION ${PYTHON_VERSION}
 echo F77_VERSION ${F77_VERSION}
 
-for PARSER in $(ls -1 drivers/* | grep -v startools | sort)
+for PARSER in $(ls -1 drivers/* | grep -iv star | sort)
 do
     TIME=$(
         (
