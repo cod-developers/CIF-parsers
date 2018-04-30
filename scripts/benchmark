@@ -38,7 +38,7 @@ echo PERL_VERSION ${PERL_VERSION}
 echo PYTHON_VERSION ${PYTHON_VERSION}
 echo F77_VERSION ${F77_VERSION}
 
-for PARSER in $(ls -1 drivers/* | grep -iv star | grep -iv pycifrw | sort)
+for PARSER in $(ls -1 drivers/* | grep -iv star | grep -iv pycifrw | grep -iv vcif2 | sort)
 do
     TIME=$(
         (
