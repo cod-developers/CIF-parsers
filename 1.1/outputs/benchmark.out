@@ -1,0 +1,20 @@
+SVNREVISION 199925P
+NFILES 382807
+SIZE 49G
+NCPU 16
+CPU_MODEL Intel(R) Xeon(R) CPU E5-2450 v2 @ 2.50GHz
+MEMTOTAL 31
+OS Debian GNU/Linux 8.6 (jessie)
+GCC_VERSION 4.9.2
+PERL_VERSION 5.20.2
+PYTHON_VERSION 2.7.9
+F77_VERSION
+drivers/ase 5441.674
+drivers/cif2cif 1892.21
+drivers/cif_linguist 1623.273
+drivers/codtools 1532.01
+drivers/codtools-fix 963.911
+drivers/gemmi 735.091
+drivers/ucif 996.389
+drivers/vcif 945.99
+drivers/zinc 969.357
