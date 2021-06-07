@@ -15,6 +15,7 @@ Tested CIF v1.1 parsers
 * [cif2cif](http://doi.org/10.1107/S0021889896006371)
 * [CIF API](https://github.com/COMCIFS/cif_api)
 * [COD::CIF::Parser of cod-tools](http://wiki.crystallography.net/cod-tools/)
+* [crystcif-parse](https://github.com/stur86/crystcif-parse)
 * [gemmi](https://github.com/project-gemmi/gemmi.git)
 * [PyCIFRW](https://bitbucket.org/jamesrhester/pycifrw/)
 * [STAR::Parser](http://pdb.sdsc.edu/STAR/index.html)
