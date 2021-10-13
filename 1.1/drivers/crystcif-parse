@@ -1,3 +1,0 @@
-#!/bin/bash
-
-validate.js "$@" | grep --quiet 'failed to parse' && echo ERROR
