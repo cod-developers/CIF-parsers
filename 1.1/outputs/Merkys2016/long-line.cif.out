@@ -3,6 +3,7 @@ cif2cif WARNING
 cif_linguist ERROR
 codtools WARNING
 codtools-fix
+crystcif-parse
 gemmi
 PyCIFRW-4.1.1
 PyCIFRW-4.2
