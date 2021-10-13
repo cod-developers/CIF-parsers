@@ -8,7 +8,7 @@ TMP_FILE="${TMP_DIR}/tmp-${BASENAME}-$$"
 
 timeout 30 cifZinc "$@" > ${TMP_FILE} 2>&1
 
-if [ "$?" == 124 ]
+if [ "$?" == 124 -o "$?" == 134 ]
 then
     echo --
 else
