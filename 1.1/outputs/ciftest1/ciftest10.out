@@ -4,7 +4,7 @@ cif_linguist ERROR
 cifxom ERROR
 codtools ERROR
 codtools-fix WARNING
-crystcif-parse
+crystcif-parse ERROR
 gemmi ERROR
 PyCIFRW-4.1.1 ERROR
 PyCIFRW-4.2 ERROR
