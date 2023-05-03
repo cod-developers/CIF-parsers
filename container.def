@@ -9,3 +9,13 @@ From: debian:unstable
     # STAR::Parser is installed from the IUCr website
     apt-get install --yes cpanminus
     cpanm https://www.iucr.org/__data/iucr/cif/software/starparser/STAR-Parser-0.59.tar.gz
+
+    # vcif
+    mkdir --parents /usr/local/install/vcif
+    cd /usr/local/install/vcif
+    wget https://www.iucr.org/resources/cif/software/archived/vcif-1.2/vcif-1.2.2.tar.gz
+    tar -x vcif-1.2.2.tar.gz
+    cd vcif-1.2.2
+    make
+    cd /usr/local/bin
+    ln -s /usr/local/install/vcif/vcif-1.2/vcif
