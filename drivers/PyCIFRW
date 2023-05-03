@@ -1,0 +1,7 @@
+#!/usr/bin/python3
+
+from CifFile import ReadCif
+import sys
+
+ReadCif(sys.argv[1])
+# TODO: Report warnings and errors
