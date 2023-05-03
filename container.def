@@ -4,4 +4,8 @@ From: debian:unstable
 %post
     apt-get update
 
-    apt-get install cif-linguist cod-tools libciftools-java libcifxom-java python3-ase 
+    apt-get install --yes cif-linguist cod-tools libciftools-java libcifxom-java python3-ase 
+
+    # STAR::Parser is installed from the IUCr website
+    apt-get install --yes cpanminus
+    cpanm https://www.iucr.org/__data/iucr/cif/software/starparser/STAR-Parser-0.59.tar.gz
