@@ -20,9 +20,10 @@ From: debian:unstable
     cd vcif-1.2.2
     make
     cd /usr/local/bin
-    ln -s /usr/local/install/vcif/vcif-1.2/vcif
+    ln -s /usr/local/install/vcif/vcif-1.2.2/vcif
 
     # zinc
+    apt-get install --yes bison
     mkdir --parents /usr/local/install/zinc
     cd /usr/local/install/zinc
     wget https://www.iucr.org/__data/iucr/cif/software/zinc/zinc.tar.Z
