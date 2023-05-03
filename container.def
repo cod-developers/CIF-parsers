@@ -6,6 +6,13 @@ From: debian:unstable
 
     apt-get install --yes cif-linguist cod-tools gemmi libciftools-java libcifxom-java python3-ase python3-pycifrw
 
+    # crystcif-parse
+    apt-get install --yes npm
+    mkdir --parents /usr/local/install/crystcif-parse && cd /usr/local/install/crystcif-parse
+    npm install crystcif-parse
+    cd /usr/local/bin
+    ln -s /usr/local/install/crystcif-parse/node_modules/crystcif-parse/bin/validate.js
+
     # STAR::Parser is installed from the IUCr website
     apt-get install --yes cpanminus
     cpanm https://www.iucr.org/__data/iucr/cif/software/starparser/STAR-Parser-0.59.tar.gz
@@ -13,8 +20,7 @@ From: debian:unstable
     apt-get install --yes wget
 
     # vcif
-    mkdir --parents /usr/local/install/vcif
-    cd /usr/local/install/vcif
+    mkdir --parents /usr/local/install/vcif && cd /usr/local/install/vcif
     wget https://www.iucr.org/resources/cif/software/archived/vcif-1.2/vcif-1.2.2.tar.gz
     tar -xf vcif-1.2.2.tar.gz && rm vcif-1.2.2.tar.gz
     cd vcif-1.2.2
@@ -24,8 +30,7 @@ From: debian:unstable
 
     # zinc
     apt-get install --yes bison
-    mkdir --parents /usr/local/install/zinc
-    cd /usr/local/install/zinc
+    mkdir --parents /usr/local/install/zinc && cd /usr/local/install/zinc
     wget https://www.iucr.org/__data/iucr/cif/software/zinc/zinc.tar.Z
     tar -xf zinc.tar.Z && rm zinc.tar.Z
     make
