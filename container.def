@@ -1,0 +1,7 @@
+Bootstrap: docker
+From: debian:unstable
+
+%post
+    apt-get update
+
+    apt-get install cif-linguist cod-tools libciftools-java libcifxom-java python3-ase 
