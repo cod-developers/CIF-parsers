@@ -10,8 +10,9 @@ From: debian:unstable
     apt-get install --yes cpanminus
     cpanm https://www.iucr.org/__data/iucr/cif/software/starparser/STAR-Parser-0.59.tar.gz
 
-    # vcif
     apt-get install --yes wget
+
+    # vcif
     mkdir --parents /usr/local/install/vcif
     cd /usr/local/install/vcif
     wget https://www.iucr.org/resources/cif/software/archived/vcif-1.2/vcif-1.2.2.tar.gz
@@ -20,3 +21,12 @@ From: debian:unstable
     make
     cd /usr/local/bin
     ln -s /usr/local/install/vcif/vcif-1.2/vcif
+
+    # zinc
+    mkdir --parents /usr/local/install/zinc
+    cd /usr/local/install/zinc
+    wget https://www.iucr.org/__data/iucr/cif/software/zinc/zinc.tar.Z
+    tar -xf zinc.tar.Z && rm zinc.tar.Z
+    make
+    cd /usr/local/bin
+    ln -s /usr/local/install/zinc/cifZinc
