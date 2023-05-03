@@ -11,10 +11,11 @@ From: debian:unstable
     cpanm https://www.iucr.org/__data/iucr/cif/software/starparser/STAR-Parser-0.59.tar.gz
 
     # vcif
+    apt-get install --yes wget
     mkdir --parents /usr/local/install/vcif
     cd /usr/local/install/vcif
     wget https://www.iucr.org/resources/cif/software/archived/vcif-1.2/vcif-1.2.2.tar.gz
-    tar -x vcif-1.2.2.tar.gz
+    tar -xf vcif-1.2.2.tar.gz && rm vcif-1.2.2.tar.gz
     cd vcif-1.2.2
     make
     cd /usr/local/bin
