@@ -17,7 +17,7 @@ public class CifTools {
 }
 END
 
-javac -cp  /usr/local/share/java/ciftools-java.jar "${TMP_DIR}/CifTools.java"
-java  -cp "/usr/local/share/java/ciftools-java.jar:${TMP_DIR}" CifTools "$@"
+javac -cp  /usr/share/java/ciftools-java.jar "${TMP_DIR}/CifTools.java"
+java  -cp "/usr/share/java/ciftools-java.jar:${TMP_DIR}" CifTools "$@"
 
 rm -rf "${TMP_DIR}"
