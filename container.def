@@ -13,11 +13,17 @@ From: debian:unstable
     cd /usr/local/bin
     ln -s /usr/local/install/crystcif-parse/node_modules/crystcif-parse/bin/validate.js
 
+    apt-get install --yes wget
+
     # STAR::Parser is installed from the IUCr website
     apt-get install --yes cpanminus
-    cpanm https://www.iucr.org/__data/iucr/cif/software/starparser/STAR-Parser-0.59.tar.gz
-
-    apt-get install --yes wget
+    mkdir /tmp/starparser && cd /tmp/starparser
+    wget https://www.iucr.org/__data/iucr/cif/software/starparser/STAR-Parser-0.59.tar.gz
+    cpanm STAR-Parser-0.59.tar.gz
+    tar -xf STAR-Parser-0.59.tar.gz
+    cp STAR-Parser-0.59/bin/parse.pl /usr/local/bin/star-parse
+    cd
+    rm -rf /tmp/starparser
 
     # vcif
     mkdir --parents /usr/local/install/vcif && cd /usr/local/install/vcif
