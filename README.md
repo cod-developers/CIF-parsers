@@ -12,7 +12,6 @@ Tested CIF v1.1 parsers
 -----------------------
 
 * [Atomic Simulation Environment (ASE)](http://wiki.fysik.dtu.dk/ase)
-* [cif2cif](https://doi.org/10.1107/S0021889896006371)
 * [CIFXOM](https://journals.iucr.org/j/issues/2011/03/00/he5526/index.html)
 * [ciftools-java](https://github.com/rcsb/ciftools-java)
 * [CIF API](https://github.com/COMCIFS/cif_api)
@@ -39,6 +38,7 @@ Tested CIF v2.0 parsers
 Previously tested parsers
 -------------------------
 
+* [cif2cif](https://doi.org/10.1107/S0021889896006371) - CIFtbx fails to build
 * [StarTools](https://www.globalphasing.com/startools/) - Python 2 only
 * [ucif](https://doi.org/10.1107/S0021889811041161) - source no longer available
 
