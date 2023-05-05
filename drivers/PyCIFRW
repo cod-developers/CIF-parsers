@@ -1,7 +1,12 @@
 #!/usr/bin/python3
 
 from CifFile import ReadCif
+from CifFile.StarFile import StarError
 import sys
 
-ReadCif(sys.argv[1])
-# TODO: Report warnings and errors
+try:
+    ReadCif(sys.argv[1])
+except StarError:
+    print('ERROR')
+
+# TODO: Report warnings
