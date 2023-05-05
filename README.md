@@ -20,7 +20,7 @@ Tested CIF v1.1 parsers
 * [gemmi](https://github.com/project-gemmi/gemmi.git)
 * [PyCIFRW](https://bitbucket.org/jamesrhester/pycifrw/)
 * [STAR::Parser](http://pdb.sdsc.edu/STAR/index.html)
-* [vcif and vcif2](http://www.iucr.org/resources/cif/software/archived/vcif-1.2)
+* [vcif](http://www.iucr.org/resources/cif/software/archived/vcif-1.2)
 * [ZINC](http://www.iucr.org/__data/iucr/cif/software/zinc/doc/zinc-paper.pdf)
 
 Parsers to be tested:
@@ -35,12 +35,13 @@ Tested CIF v2.0 parsers
 * [COD::CIF::Parser of cod-tools](http://wiki.crystallography.net/cod-tools/)
 * [PyCIFRW](https://bitbucket.org/jamesrhester/pycifrw/)
 
-Previously tested parsers
--------------------------
+Formely tested parsers
+----------------------
 
 * [cif2cif](https://doi.org/10.1107/S0021889896006371) - CIFtbx fails to build
 * [StarTools](https://www.globalphasing.com/startools/) - Python 2 only
 * [ucif](https://doi.org/10.1107/S0021889811041161) - source no longer available
+* [vcif2](http://www.iucr.org/resources/cif/software/archived/vcif-1.2) - fails to build
 
 Structure
 ---------
