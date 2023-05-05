@@ -1,23 +1,12 @@
 #!/bin/bash
 
-TMP_DIR=$(mktemp --directory)
-
-cat > "${TMP_DIR}/CifTools.java" <<END
+groovy -cp /usr/share/java/ciftools-java.jar -e '
 import java.nio.file.Paths;
 import org.rcsb.cif.CifIO;
+import org.rcsb.cif.ParsingException;
 
-public class CifTools {
-    public static void main(String[] args) {
-        try {
-            CifIO.readFromPath(Paths.get(args[0]));
-        } catch (Exception e) {
-            System.out.println("ERROR");
-        }
-    }
-}
-END
-
-javac -cp  /usr/share/java/ciftools-java.jar "${TMP_DIR}/CifTools.java"
-java  -cp "/usr/share/java/ciftools-java.jar:${TMP_DIR}" CifTools "$@"
-
-rm -rf "${TMP_DIR}"
+try {
+    println CifIO.readFromPath( Paths.get( args[0] ) )
+} catch (ParsingException) {
+    println "ERROR"
+}' $1
