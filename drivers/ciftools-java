@@ -6,7 +6,7 @@ import org.rcsb.cif.CifIO;
 import org.rcsb.cif.ParsingException;
 
 try {
-    println CifIO.readFromPath( Paths.get( args[0] ) )
+    CifIO.readFromPath( Paths.get( args[0] ) )
 } catch (ParsingException) {
     println "ERROR"
 }' $1
