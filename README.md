@@ -12,7 +12,7 @@ Tested CIF v1.1 parsers
 -----------------------
 
 * [Atomic Simulation Environment (ASE)](http://wiki.fysik.dtu.dk/ase)
-* [cif2cif](http://doi.org/10.1107/S0021889896006371)
+* [cif2cif](https://doi.org/10.1107/S0021889896006371)
 * [CIFXOM](https://journals.iucr.org/j/issues/2011/03/00/he5526/index.html)
 * [ciftools-java](https://github.com/rcsb/ciftools-java)
 * [CIF API](https://github.com/COMCIFS/cif_api)
