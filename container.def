@@ -4,7 +4,7 @@ From: debian:unstable
 %post
     apt-get update
 
-    apt-get install --yes cif-linguist cod-tools gemmi groovy libciftools-java libcifxom-java python3-ase python3-pycifrw
+    apt-get install --yes cif-linguist cod-tools gemmi groovy libciftools-java libcifxom-java openbabel python3-ase python3-pycifrw
 
     # crystcif-parse
     apt-get install --yes npm

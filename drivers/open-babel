@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# TODO: Detect errors
+obabel -icif "$1" -ocan /dev/null --append formula
