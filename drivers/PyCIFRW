@@ -1,12 +1,14 @@
-#!/usr/bin/python3
+#!/bin/bash
 
+OUT=$(python3 2>&1 <<END
 from CifFile import ReadCif
-from CifFile.StarFile import StarError
-import sys
+ReadCif("$1")
+END
+)
 
-try:
-    ReadCif(sys.argv[1])
-except StarError:
-    print('ERROR')
-
-# TODO: Report warnings
+if [ $? != 0 ]
+then
+    echo ERROR
+else
+    test -n "$OUT" && echo WARNING
+fi
