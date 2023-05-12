@@ -1,6 +1,6 @@
 PyCIFRW ERROR
 STAR WARNING
-ase
+ase WARNING
 cif2cif WARNING
 cif_linguist
 ciftools-java
