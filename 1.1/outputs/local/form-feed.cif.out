@@ -1,17 +1,14 @@
+PyCIFRW ERROR
+STAR WARNING
 ase
 cif2cif ERROR
 cif_linguist ERROR
 ciftools-java
 cifxom ERROR
-codtools
-codtools-fix
+codtools ERROR
+codtools-fix ERROR
 crystcif-parse ERROR
 gemmi ERROR
-PyCIFRW-4.1.1 ERROR
-PyCIFRW-4.2 ERROR
-STAR
-startools
-ucif
+open-babel
 vcif
-vcif2 WARNING
 zinc
