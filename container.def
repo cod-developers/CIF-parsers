@@ -4,7 +4,24 @@ From: debian:unstable
 %post
     apt-get update
 
-    apt-get install --yes cif-linguist cod-tools gemmi groovy libciftools-java libcifxom-java openbabel python3-ase python3-pycifrw
+    apt-get install --yes cif-linguist cod-tools gemmi groovy libciftools-java libcifxom-java make openbabel python3-ase python3-pycifrw wget
+
+    # cif2cif
+    apt-get install --yes ncompress gfortran
+    mkdir --parents /usr/local/install/cif2cif && cd /usr/local/install/cif2cif
+    wget http://www.bernstein-plus-sons.com/software/ciftbx/ciftbx.shar.Z
+    wget http://www.bernstein-plus-sons.com/software/ciftbx/cif2cif.shar.Z
+    for PKG in ciftbx cif2cif
+    do
+        (
+            uncompress $PKG.shar.Z
+            bash $PKG.shar
+            cd $PKG.src
+            make
+        )
+    done
+    cd /usr/local/bin
+    ln -s /usr/local/install/cif2cif/cif2cif.src/cif2cif
 
     # crystcif-parse
     apt-get install --yes npm
@@ -12,8 +29,6 @@ From: debian:unstable
     npm install crystcif-parse
     cd /usr/local/bin
     ln -s /usr/local/install/crystcif-parse/node_modules/crystcif-parse/bin/validate.js
-
-    apt-get install --yes wget
 
     # STAR::Parser is installed from the IUCr website
     apt-get install --yes cpanminus
