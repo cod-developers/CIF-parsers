@@ -37,6 +37,7 @@ From: debian:unstable
     cpanm STAR-Parser-0.59.tar.gz
     tar -xf STAR-Parser-0.59.tar.gz
     cp STAR-Parser-0.59/bin/parse.pl /usr/local/bin/star-parse
+    sed -i 's/\/usr\/local\/bin\/perl/\/usr\/bin\/perl/' /usr/local/bin/star-parse
     cd
     rm -rf /tmp/starparser
 

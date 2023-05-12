@@ -15,9 +15,9 @@ PyCIFRW</td><td>STAR</td><td>ase</td><td>cif2cif</td><td>cif_linguist</td><td>ci
 <tr><td> outputs/Merkys2016/long-line.cif.out
 </td><td></td><td>W</td><td></td><td>W</td><td>E</td><td></td><td>E</td><td>W</td><td></td><td></td><td></td><td></td><td>W</td><td></td></tr>
 <tr><td> outputs/Merkys2016/loop-without-tags.cif.out
-</td><td></td><td>W</td><td>W</td><td>E</td><td>E</td><td>E</td><td>E</td><td>E</td><td>E</td><td>E</td><td>E</td><td></td><td>E</td><td>E</td></tr>
+</td><td></td><td>--</td><td>W</td><td>E</td><td>E</td><td>E</td><td>E</td><td>E</td><td>E</td><td>E</td><td>E</td><td></td><td>E</td><td>E</td></tr>
 <tr><td> outputs/Merkys2016/loop-without-values.cif.out
-</td><td></td><td>W</td><td>W</td><td>E</td><td>E</td><td>E</td><td>E</td><td>E</td><td>E</td><td>E</td><td>E</td><td></td><td>E</td><td>E</td></tr>
+</td><td></td><td>--</td><td>W</td><td>E</td><td>E</td><td>E</td><td>E</td><td>E</td><td>E</td><td>E</td><td>E</td><td></td><td>E</td><td>E</td></tr>
 <tr><td> outputs/Merkys2016/missing-closing-quote.cif.out
 </td><td>E</td><td>W</td><td></td><td>W</td><td>E</td><td></td><td>E</td><td>E</td><td>W</td><td></td><td>E</td><td></td><td>E</td><td></td></tr>
 <tr><td> outputs/Merkys2016/missing-data-header.cif.out
@@ -33,7 +33,7 @@ PyCIFRW</td><td>STAR</td><td>ase</td><td>cif2cif</td><td>cif_linguist</td><td>ci
 <tr><td> outputs/Merkys2016/tag-immediately-following-textfield.cif.out
 </td><td></td><td>W</td><td></td><td>E</td><td>E</td><td></td><td></td><td>E</td><td>E</td><td></td><td>E</td><td></td><td>E</td><td></td></tr>
 <tr><td> outputs/Merkys2016/textfield-no-closing-semicolon.cif.out
-</td><td>E</td><td>W</td><td>E</td><td></td><td>E</td><td></td><td>E</td><td>E</td><td>E</td><td></td><td>E</td><td></td><td>E</td><td>--</td></tr>
+</td><td>E</td><td>E</td><td>E</td><td></td><td>E</td><td></td><td>E</td><td>E</td><td>E</td><td></td><td>E</td><td></td><td>E</td><td>--</td></tr>
 <tr><td> outputs/Merkys2016/value-immediately-following-textfield.cif.out
 </td><td></td><td>W</td><td></td><td></td><td>E</td><td></td><td></td><td>E</td><td>E</td><td></td><td>E</td><td></td><td></td><td></td></tr>
 <tr><td> outputs/Merkys2016/value-starting-with-bracket.cif.out
@@ -41,13 +41,13 @@ PyCIFRW</td><td>STAR</td><td>ase</td><td>cif2cif</td><td>cif_linguist</td><td>ci
 <tr><td> outputs/Merkys2016/value-starting-with-dollar.cif.out
 </td><td>E</td><td>W</td><td></td><td></td><td>E</td><td></td><td></td><td>E</td><td>E</td><td></td><td>E</td><td></td><td></td><td></td></tr>
 <tr><td> outputs/Merkys2016/wrong-number-of-loop-values.cif.out
-</td><td>E</td><td>W</td><td>W</td><td>E</td><td>E</td><td></td><td>E</td><td>E</td><td>E</td><td>E</td><td>E</td><td></td><td>E</td><td></td></tr>
+</td><td>E</td><td>E</td><td>W</td><td>E</td><td>E</td><td></td><td>E</td><td>E</td><td>E</td><td>E</td><td>E</td><td></td><td>E</td><td></td></tr>
 <tr><td> outputs/ciftest1/ciftest0.out
 </td><td></td><td>W</td><td></td><td></td><td></td><td>E</td><td>E</td><td></td><td></td><td></td><td></td><td></td><td>W</td><td></td></tr>
 <tr><td> outputs/ciftest1/ciftest1.out
 </td><td></td><td>W</td><td></td><td></td><td></td><td></td><td>E</td><td></td><td></td><td></td><td></td><td></td><td>W</td><td></td></tr>
 <tr><td> outputs/ciftest1/ciftest10.out
-</td><td>E</td><td>W</td><td>W</td><td>E</td><td>E</td><td></td><td>E</td><td>E</td><td>E</td><td>E</td><td>E</td><td></td><td>E</td><td></td></tr>
+</td><td>E</td><td>E</td><td>W</td><td>E</td><td>E</td><td></td><td>E</td><td>E</td><td>E</td><td>E</td><td>E</td><td></td><td>E</td><td></td></tr>
 <tr><td> outputs/ciftest1/ciftest11.out
 </td><td></td><td>W</td><td></td><td></td><td>E</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td> outputs/ciftest1/ciftest2.out
@@ -65,7 +65,7 @@ PyCIFRW</td><td>STAR</td><td>ase</td><td>cif2cif</td><td>cif_linguist</td><td>ci
 <tr><td> outputs/ciftest1/ciftest8.out
 </td><td>E</td><td>W</td><td>W</td><td>W</td><td></td><td></td><td></td><td>W</td><td></td><td></td><td></td><td></td><td>W</td><td></td></tr>
 <tr><td> outputs/ciftest1/ciftest9.out
-</td><td>E</td><td>W</td><td>W</td><td>E</td><td>E</td><td>E</td><td>E</td><td>E</td><td>E</td><td>E</td><td>E</td><td></td><td>E</td><td>E</td></tr>
+</td><td>E</td><td>E</td><td>W</td><td>E</td><td>E</td><td>E</td><td>E</td><td>E</td><td>E</td><td>E</td><td>E</td><td></td><td>E</td><td>E</td></tr>
 <tr><td> outputs/local/_refine_ls_extinction_expression.cif.out
 </td><td></td><td>W</td><td></td><td></td><td>E</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td> outputs/local/ascii-127.cif.out
@@ -87,7 +87,7 @@ PyCIFRW</td><td>STAR</td><td>ase</td><td>cif2cif</td><td>cif_linguist</td><td>ci
 <tr><td> outputs/local/textfield-in-loop.cif.out
 </td><td></td><td>W</td><td>W</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td> outputs/local/unquoted-loop-prefix.cif.out
-</td><td></td><td>W</td><td></td><td>E</td><td></td><td>E</td><td></td><td></td><td></td><td>E</td><td>E</td><td></td><td></td><td>E</td></tr>
+</td><td></td><td>E</td><td></td><td>E</td><td></td><td>E</td><td></td><td></td><td></td><td>E</td><td>E</td><td></td><td></td><td>E</td></tr>
 <tr><td> outputs/local/value-starting-with-closing-bracket.cif.out
 </td><td>W</td><td>W</td><td></td><td></td><td>E</td><td></td><td></td><td>E</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td> outputs/local/vertical-tab.cif.out
