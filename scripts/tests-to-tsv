@@ -3,13 +3,23 @@
 use strict;
 use warnings;
 
+my $header_is_printed;
+
 for my $file (@ARGV) {
     open( my $inp, '<', $file );
-    my @lines = map { chomp; s/^\S+\s?//; $_ } <$inp>;
+    my @lines = map { chomp; $_ } <$inp>;
     close $inp;
+
+    if( !$header_is_printed ) {
+        my @parsers = map { /^(\S+)/; $1 } @lines;
+        print join( "\t", '', @parsers ), "\n";
+        $header_is_printed = 1;
+    }
+
+    my @results = map { s/^\S+\s?//; $_ } @lines;
 
     $file =~ s/^[^\/]+[\/]//;   # Drop the outputs/ directory name
     $file =~ s/\.out$//;        # Drop .out
 
-    print join( "\t", $file, @lines ), "\n";
+    print join( "\t", $file, @results ), "\n";
 }
