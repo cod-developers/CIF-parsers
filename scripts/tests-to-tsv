@@ -1,0 +1,15 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+for my $file (@ARGV) {
+    open( my $inp, '<', $file );
+    my @lines = map { chomp; s/^\S+\s?//; $_ } <$inp>;
+    close $inp;
+
+    $file =~ s/^[^\/]+[\/]//;   # Drop the outputs/ directory name
+    $file =~ s/\.out$//;        # Drop .out
+
+    print join( "\t", $file, @lines ), "\n";
+}

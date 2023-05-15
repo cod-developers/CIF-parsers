@@ -9,6 +9,7 @@ TESTS = $(shell find ${INP_DIR}/ -name .svn -prune \
             -o -type f -print)
 OUTPUTS = $(sort ${TESTS:${INP_DIR}/%=${OUT_DIR}/%.out})
 
+TABLE_TSV  = $(OUT_DIR)/table.tsv
 TABLE_TEX  = ${OUT_DIR}/table.tex
 TABLE_HTML = ${OUT_DIR}/table.html
 TABLE_MD   = ${OUT_DIR}/table.md
@@ -29,7 +30,10 @@ ${BENCHMARK_OUT}:
 	../scripts/benchmark > $@
 
 cleanAll distclean:
-	rm -f ${OUTPUTS} ${TABLE_TEX} ${TABLE_HTML}
+	rm -f ${OUTPUTS} ${TABLE_TEX} ${TABLE_HTML} $(TABLE_TSV)
+
+$(TABLE_TSV): $(OUTPUTS)
+	./scripts/tests-to-tsv $+ > $@
 
 ${TABLE_TEX}: ${OUTPUTS}
 	for OUTPUT in $+; \
