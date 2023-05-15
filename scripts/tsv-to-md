@@ -1,0 +1,20 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+$\ = "\n";
+my $parsers = <>;
+chomp $parsers;
+my @parsers = split /\t/, $parsers;
+$" = ' | ';
+print "| @parsers |";
+
+my @cells = (':-----:') x @parsers;
+print "| @cells |";
+
+while( <> ) {
+    chomp;
+    s/\t/ | /g;
+    print;
+}
