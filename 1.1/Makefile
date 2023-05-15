@@ -7,6 +7,7 @@ TESTS = $(shell find $(INP_DIR)/ -name .svn -prune \
             -o -name \*.tsv -prune \
             -o -name \*.md -prune \
             -o -type f -print)
+
 OUTPUTS = $(sort $(TESTS:$(INP_DIR)/%=$(OUT_DIR)/%.out))
 
 TABLE_TSV  = $(OUT_DIR)/table.tsv
@@ -16,9 +17,11 @@ TABLE_MD   = $(OUT_DIR)/table.md
 
 BENCHMARK_OUT = $(OUT_DIR)/benchmark.out
 
-all table: ${TABLE_TEX} ${TABLE_HTML} ${TABLE_MD}
+all: tables
 
-benchmark: ${BENCHMARK_OUT}
+table tables: $(TABLE_HTML) $(TABLE_MD) $(TABLE_TEX)
+
+benchmark: $(BENCHMARK_OUT)
 
 ${OUT_DIR}/%.out: ${INP_DIR}/%
 	for PARSER in $$(ls -1 drivers/* | sort); \
@@ -26,7 +29,7 @@ ${OUT_DIR}/%.out: ${INP_DIR}/%
         echo $$(basename $${PARSER}) $$($${PARSER} $<) >> $@; \
     done
 
-${BENCHMARK_OUT}:
+$(BENCHMARK_OUT):
 	../scripts/benchmark > $@
 
 cleanAll distclean:
