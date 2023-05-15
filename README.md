@@ -19,6 +19,7 @@ Tested CIF v1.1 parsers
 * [COD::CIF::Parser of cod-tools](http://wiki.crystallography.net/cod-tools/)
 * [crystcif-parse](https://github.com/stur86/crystcif-parse)
 * [gemmi](https://github.com/project-gemmi/gemmi.git)
+* [OpenBabel](https://github.com/openbabel/openbabel)
 * [PyCIFRW](https://bitbucket.org/jamesrhester/pycifrw/)
 * [STAR::Parser](http://pdb.sdsc.edu/STAR/index.html)
 * [vcif](http://www.iucr.org/resources/cif/software/archived/vcif-1.2)
@@ -28,7 +29,6 @@ Parsers to be tested:
 
 * [Jmol](https://jmol.sourceforge.net)
 * [mmCIF parser](https://github.com/gjbekker/cif-parsers)
-* [OpenBabel](https://github.com/openbabel/openbabel)
 
 Tested CIF v2.0 parsers
 -----------------------
