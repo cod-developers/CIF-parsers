@@ -8,6 +8,7 @@ OUTPUTS = $(sort ${TESTS:${INP_DIR}/%=${OUT_DIR}/%.out})
 
 TABLE_TEX  = ${OUT_DIR}/table.tex
 TABLE_HTML = ${OUT_DIR}/table.html
+TABLE_MD   = ${OUT_DIR}/table.md
 
 all table: ${TABLE_TEX} ${TABLE_HTML}
 
@@ -44,3 +45,21 @@ ${TABLE_HTML}: ${OUTPUTS}
 		) \
 	done >> $@
 	echo '</table></html>' >> $@
+
+${TABLE_MD}: ${OUTPUTS}
+	perl \
+		-e 'my @parsers = @ARGV;' \
+		-e 'chomp @parsers;' \
+		-e 'unshift @parsers, ""; ' \
+		-e 'print "| ", ( join " | ", @parsers ), " |\n";' \
+		-e 'print "| ", ( join " | ", ( ":-----:" ) x @parsers ), " |\n";' \
+				$$(ls -1 drivers/* | xargs -n1 basename | sort) > $@
+	for OUTPUT in $+; \
+	do \
+		( \
+			echo -n '| ' "$${OUTPUT}"; \
+			perl -lpe 's/([WE])\w+/$$1/g; ' "$${OUTPUT}" | \
+			perl -ne 'my @a = split /\s/; print " | ", $$a[1]'; \
+			echo ' |' \
+		) \
+	done >> $@
