@@ -1,0 +1,8 @@
+	PyCIFRW	cif_linguist	codtools	codtools-fix
+local/U+D800.cif	ERROR	ERROR	ERROR	ERROR
+local/byte-order-mark.cif				
+local/deep-empty-list.cif				
+local/five-quotes.cif		ERROR	ERROR	WARNING
+local/magic-code-and-comment.cif				
+local/magic-code-only.cif				
+local/space-before-table-sep.cif	ERROR	ERROR	ERROR	ERROR
