@@ -1,20 +1,20 @@
 INP_DIR = tests
 OUT_DIR = outputs
 
-TESTS = $(shell find ${INP_DIR}/ -name .svn -prune \
+TESTS = $(shell find $(INP_DIR)/ -name .svn -prune \
             -o -name \*.result.canon -prune \
             -o -name runtests -prune \
             -o -name \*.tsv -prune \
             -o -name \*.md -prune \
             -o -type f -print)
-OUTPUTS = $(sort ${TESTS:${INP_DIR}/%=${OUT_DIR}/%.out})
+OUTPUTS = $(sort $(TESTS:$(INP_DIR)/%=$(OUT_DIR)/%.out))
 
 TABLE_TSV  = $(OUT_DIR)/table.tsv
-TABLE_TEX  = ${OUT_DIR}/table.tex
-TABLE_HTML = ${OUT_DIR}/table.html
-TABLE_MD   = ${OUT_DIR}/table.md
+TABLE_TEX  = $(OUT_DIR)/table.tex
+TABLE_HTML = $(OUT_DIR)/table.html
+TABLE_MD   = $(OUT_DIR)/table.md
 
-BENCHMARK_OUT = ${OUT_DIR}/benchmark.out
+BENCHMARK_OUT = $(OUT_DIR)/benchmark.out
 
 all table: ${TABLE_TEX} ${TABLE_HTML} ${TABLE_MD}
 
