@@ -30,7 +30,7 @@ ${BENCHMARK_OUT}:
 	../scripts/benchmark > $@
 
 cleanAll distclean:
-	rm -f ${OUTPUTS} ${TABLE_TEX} ${TABLE_HTML} $(TABLE_TSV)
+	rm -f ${OUTPUTS} ${TABLE_TEX} ${TABLE_HTML} $(TABLE_MD) $(TABLE_TSV)
 
 $(TABLE_TSV): $(OUTPUTS)
 	./scripts/tests-to-tsv $+ > $@
@@ -65,17 +65,5 @@ ${TABLE_HTML}: ${OUTPUTS}
 	done >> $@
 	echo '</table></html>' >> $@
 
-${TABLE_MD}: ${OUTPUTS}
-	echo '<table border="1"><tr><td></td><td>' > $@
-	perl -e '$$, = "</td><td>"; print @ARGV' $$(ls -1 drivers/* | xargs -n1 basename | sort) >> $@
-	echo '</td></tr>' >> $@
-	for OUTPUT in $+; \
-	do \
-		( \
-			echo '<tr><td>' $${OUTPUT}; \
-			perl -lpe 's/([WE])\w+/$$1/g; ' $${OUTPUT} | \
-			perl -ne 'my @a = split /\s/; print "</td><td>", $$a[1]'; \
-			echo '</td></tr>' \
-		) \
-	done >> $@
-	echo '</table>' >> $@
+$(TABLE_MD): $(TABLE_TSV)
+	./scripts/tsv-to-md $< > $@
