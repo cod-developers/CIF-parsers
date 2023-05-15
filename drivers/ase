@@ -1,4 +1,5 @@
 #!/bin/bash
 
-python3 -c "import sys; from ase.io.cif import parse_cif; cif = parse_cif( '$1' )" 2>&1 \
-    | grep -q UserWarning && echo WARNING
+python3 -c "import sys; from ase.io.cif import parse_cif; [cif for cif in parse_cif( '$1' )]" 2>&1 \
+    | grep -oP '(^[A-Za-z]+Error|UserWarning)' \
+    | perl -lne 'print uc $1 if /(Error|Warning)$/'

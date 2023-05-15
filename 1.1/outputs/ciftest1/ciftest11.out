@@ -1,3 +1,5 @@
+PyCIFRW
+STAR
 ase
 cif2cif
 cif_linguist ERROR
@@ -5,13 +7,8 @@ ciftools-java
 cifxom
 codtools
 codtools-fix
-crystcif-parse ERROR
+crystcif-parse
 gemmi
-PyCIFRW-4.1.1
-PyCIFRW-4.2
-STAR
-startools
-ucif
+open-babel
 vcif
-vcif2
 zinc
