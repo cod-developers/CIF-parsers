@@ -1,0 +1,14 @@
+#!/usr/bin/python3
+
+from pymatgen.io.cif import CifFile
+import sys
+import warnings
+
+warnings.filterwarnings('error')
+
+try:
+    cif = CifFile.from_file(sys.argv[1])
+except UserWarning:
+    print("WARNING")
+except ZeroDivisionError:
+    print("ERROR")
