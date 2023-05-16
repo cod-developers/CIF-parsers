@@ -12,3 +12,9 @@ test tests: $(CONTAINER)
 
 $(CONTAINER): $(CONTAINER:%.sif=%.def)
 	apptainer build $@ $<
+
+.PHONY: clean
+
+clean:
+	$(MAKE) -C 1.1 distclean
+	$(MAKE) -C 2.0 distclean
