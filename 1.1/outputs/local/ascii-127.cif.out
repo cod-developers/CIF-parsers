@@ -10,5 +10,6 @@ codtools-fix WARNING
 crystcif-parse
 gemmi ERROR
 open-babel
+pymatgen
 vcif WARNING
 zinc

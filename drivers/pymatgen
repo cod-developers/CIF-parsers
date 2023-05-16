@@ -8,7 +8,9 @@ warnings.filterwarnings('error')
 
 try:
     cif = CifFile.from_file(sys.argv[1])
+except AssertionError:
+    print('ERROR')
 except UserWarning:
-    print("WARNING")
+    print('WARNING')
 except ZeroDivisionError:
-    print("ERROR")
+    print('ERROR')

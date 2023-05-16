@@ -10,5 +10,6 @@ codtools-fix
 crystcif-parse
 gemmi
 open-babel
+pymatgen
 vcif
 zinc
