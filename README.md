@@ -21,6 +21,7 @@ Tested CIF v1.1 parsers
 * [gemmi](https://github.com/project-gemmi/gemmi.git)
 * [OpenBabel](https://github.com/openbabel/openbabel)
 * [PyCIFRW](https://bitbucket.org/jamesrhester/pycifrw/)
+* [pymatgen](https://pymatgen.org)
 * [STAR::Parser](http://pdb.sdsc.edu/STAR/index.html)
 * [vcif](http://www.iucr.org/resources/cif/software/archived/vcif-1.2)
 * [ZINC](http://www.iucr.org/__data/iucr/cif/software/zinc/doc/zinc-paper.pdf)
