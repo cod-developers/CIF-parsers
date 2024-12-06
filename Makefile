@@ -15,7 +15,7 @@ $(CONTAINER): $(CONTAINER:%.sif=%.def)
 	apptainer build $@ $<
 
 $(VERSIONS):
-	LC_ALL=C $(CONTAINER) scripts/versions > $@
+	LC_ALL=C $(CONTAINER) scripts/versions --no-debian-version > $@
 
 .PHONY: clean
 

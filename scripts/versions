@@ -1,9 +1,13 @@
 #!/bin/bash
 
+DEBIAN_VERSION_FILTER=cat
+
+test "$1" = "--no-debian-version" && DEBIAN_VERSION_FILTER='perl -lpe s/[-+].*//'
+
 version_from_deb() {
     PKG="$1"
 
-    dpkg -s $PKG | grep ^Version | cut -d ' ' -f 2
+    dpkg -s $PKG | grep ^Version | cut -d ' ' -f 2 | ${DEBIAN_VERSION_FILTER}
 }
 
 (
