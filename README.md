@@ -1,12 +1,8 @@
 Comparison of Crystallographic Information File format v1.1 and v2.0 parsers
 ============================================================================
 
-Various parsers for Crystallographic Information File (CIF) format v1.1
-and v2.0 are compared as continuation of research published in
-[Merkys et al. 2016](http://scripts.iucr.org/cgi-bin/paper?po5052).
-Original purpose of this research is to find out the differences in
-reactions of various CIF parsers while parsing curious cases of both
-valid and erroneous CIF files.
+Various parsers for Crystallographic Information File (CIF) format v1.1 and v2.0 are compared as continuation of research published in [Merkys et al. 2016](http://scripts.iucr.org/cgi-bin/paper?po5052).
+Original purpose of this research is to find out the differences in reactions of various CIF parsers while parsing curious cases of both valid and erroneous CIF files.
 
 Tested CIF v1.1 parsers
 -----------------------
