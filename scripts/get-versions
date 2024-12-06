@@ -1,0 +1,24 @@
+#!/bin/bash
+
+version_from_deb() {
+    PKG="$1"
+
+    dpkg -s $PKG | grep ^Version | cut -d ' ' -f 2
+}
+
+echo ase $(version_from_deb python3-ase)
+echo cif_linguist $(version_from_deb cif-linguist)
+echo ciftools-java $(version_from_deb libciftools-java)
+echo cifxom $(version_from_deb libcifxom-java)
+echo codtools $(version_from_deb cod-tools)
+echo codtools-fix $(version_from_deb cod-tools)
+echo gemmi $(version_from_deb gemmi)
+echo open-babel $(version_from_deb openbabel)
+echo PyCIFRW $(version_from_deb python3-pycifrw)
+echo pymatgen $(version_from_deb python3-pymatgen)
+
+# cif2cif
+# crystcif-parse
+# STAR
+# vcif
+# zinc
