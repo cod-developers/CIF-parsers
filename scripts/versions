@@ -1,0 +1,25 @@
+#!/bin/bash
+
+version_from_deb() {
+    PKG="$1"
+
+    dpkg -s $PKG | grep ^Version | cut -d ' ' -f 2
+}
+
+(
+    echo ase            $(version_from_deb python3-ase)
+    echo cif2cif        $(cif2cif </dev/null 2>/dev/null | grep -oP 'version \S+' | cut -d ' ' -f 2)
+    echo cif_linguist   $(version_from_deb cif-linguist)
+    echo ciftools-java  $(version_from_deb libciftools-java)
+    echo cifxom         $(version_from_deb libcifxom-java)
+    echo codtools       $(version_from_deb cod-tools)
+    echo codtools-fix   $(version_from_deb cod-tools)
+    echo crystcif-parse $(grep version /usr/local/install/crystcif-parse/node_modules/crystcif-parse/package.json | cut -d '"' -f 4)
+    echo gemmi          $(version_from_deb gemmi)
+    echo open-babel     $(version_from_deb openbabel)
+    echo PyCIFRW        $(version_from_deb python3-pycifrw)
+    echo pymatgen       $(version_from_deb python3-pymatgen)
+    echo STAR           $(perl -e 'use STAR::Parser; print $STAR::Parser::VERSION')
+    echo vcif           $(basename /usr/local/install/vcif/vcif-* | cut -d '-' -f 2)
+    echo zinc           ?
+) | tr ' ' '\t'

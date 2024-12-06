@@ -1,8 +1,9 @@
 CONTAINER = ./container.sif
+VERSIONS  = versions.tab
 
 .PHONY: all build container test tests
 
-all: tests
+all: tests $(VERSIONS)
 
 build container: $(CONTAINER)
 
@@ -12,6 +13,9 @@ test tests: $(CONTAINER)
 
 $(CONTAINER): $(CONTAINER:%.sif=%.def)
 	apptainer build $@ $<
+
+$(VERSIONS):
+	LC_ALL=C $(CONTAINER) scripts/versions > $@
 
 .PHONY: clean
 
