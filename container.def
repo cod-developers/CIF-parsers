@@ -7,18 +7,13 @@ From: debian:unstable
     apt-get install --yes cif-linguist cod-tools gemmi groovy libciftools-java libcifxom-java make openbabel python3-ase python3-pycifrw python3-pymatgen wget
 
     # cif2cif
-    apt-get install --yes ncompress gfortran
+    apt-get install --yes csh gfortran ncompress
     mkdir --parents /usr/local/install/cif2cif && cd /usr/local/install/cif2cif
-    wget http://www.bernstein-plus-sons.com/software/ciftbx/ciftbx.shar.Z
-    wget http://www.bernstein-plus-sons.com/software/ciftbx/cif2cif.shar.Z
     for PKG in ciftbx cif2cif
     do
-        (
-            uncompress $PKG.shar.Z
-            bash $PKG.shar
-            cd $PKG.src
-            make
-        )
+        wget http://www.bernstein-plus-sons.com/cgi-bin/yaya/decomp.cgi/NDB/mmcif/software/ciftbx_4.1.0/$PKG.cshar
+        csh $PKG.cshar
+        ( cd $PKG.src && make )
     done
     cd /usr/local/bin
     ln -s /usr/local/install/cif2cif/cif2cif.src/cif2cif
