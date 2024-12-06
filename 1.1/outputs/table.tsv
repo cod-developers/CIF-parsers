@@ -22,16 +22,16 @@ Merkys2016/value-starting-with-dollar.cif	ERROR				ERROR			ERROR	ERROR		ERROR
 Merkys2016/wrong-number-of-loop-values.cif	ERROR	ERROR	WARNING	ERROR	ERROR		ERROR	ERROR	ERROR	ERROR	ERROR			ERROR	
 ciftest1/ciftest0						ERROR	ERROR							WARNING	
 ciftest1/ciftest1							ERROR							WARNING	
-ciftest1/ciftest10	ERROR	ERROR	WARNING	ERROR	ERROR		ERROR	ERROR	ERROR	ERROR	ERROR		ERROR	ERROR	
+ciftest1/ciftest10	ERROR	ERROR	WARNING	ERROR	ERROR		ERROR	ERROR	ERROR	ERROR	ERROR			ERROR	
 ciftest1/ciftest11					ERROR										
 ciftest1/ciftest2														WARNING	ERROR
 ciftest1/ciftest3															
-ciftest1/ciftest4			WARNING												
-ciftest1/ciftest5	ERROR		WARNING WARNING WARNING ERROR		ERROR		ERROR	ERROR	ERROR	ERROR	ERROR		WARNING		
+ciftest1/ciftest4															
+ciftest1/ciftest5	ERROR		ERROR		ERROR		ERROR	ERROR	ERROR	ERROR	ERROR		WARNING		
 ciftest1/ciftest6	ERROR		ERROR	WARNING	ERROR		ERROR	ERROR	WARNING		ERROR			ERROR	
 ciftest1/ciftest7	ERROR	WARNING		ERROR	ERROR	ERROR	ERROR	ERROR	WARNING		ERROR		WARNING	ERROR	ERROR
-ciftest1/ciftest8	ERROR		WARNING	WARNING				WARNING						WARNING	
-ciftest1/ciftest9	ERROR	ERROR	WARNING WARNING	ERROR	ERROR	ERROR	ERROR	ERROR	ERROR	ERROR	ERROR		ERROR	ERROR	ERROR
+ciftest1/ciftest8	ERROR			WARNING				WARNING						WARNING	
+ciftest1/ciftest9	ERROR	ERROR	ERROR	ERROR	ERROR	ERROR	ERROR	ERROR	ERROR	ERROR	ERROR			ERROR	ERROR
 local/_refine_ls_extinction_expression.cif					ERROR										
 local/ascii-127.cif					ERROR		ERROR	ERROR	WARNING		ERROR			WARNING	
 local/byte-order-mark.cif			ERROR		ERROR	ERROR	ERROR				ERROR			ERROR	ERROR
@@ -45,4 +45,4 @@ local/textfield-in-loop.cif			WARNING
 local/unquoted-loop-prefix.cif		ERROR		ERROR		ERROR				ERROR	ERROR				ERROR
 local/value-starting-with-closing-bracket.cif	WARNING				ERROR			ERROR							
 local/vertical-tab.cif	ERROR		ERROR	ERROR	ERROR		ERROR	ERROR	ERROR	ERROR	ERROR				
-local/whitespace-placement.cif			WARNING ERROR												
+local/whitespace-placement.cif			ERROR												

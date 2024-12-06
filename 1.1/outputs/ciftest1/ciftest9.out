@@ -1,6 +1,6 @@
 PyCIFRW ERROR
 STAR ERROR
-ase WARNING WARNING
+ase ERROR
 cif2cif ERROR
 cif_linguist ERROR
 ciftools-java ERROR
@@ -10,6 +10,6 @@ codtools-fix ERROR
 crystcif-parse ERROR
 gemmi ERROR
 open-babel
-pymatgen ERROR
+pymatgen
 vcif ERROR
 zinc ERROR
