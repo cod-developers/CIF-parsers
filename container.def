@@ -1,55 +1,68 @@
 Bootstrap: docker
 From: debian:unstable
 
+%files
+    patches /usr/local/CIF-parsers/patches
+
 %post
     apt-get update
 
-    apt-get install --yes cif-linguist cod-tools gemmi groovy libciftools-java libcifxom-java make openbabel python3-ase python3-pycifrw python3-pymatgen wget
+    apt-get install --yes cif-linguist cod-tools gemmi groovy libciftools-java libcifxom-java make openbabel patch python3-ase python3-pycifrw python3-pymatgen wget
 
     # cif2cif
     apt-get install --yes csh gfortran ncompress
-    mkdir --parents /usr/local/install/cif2cif && cd /usr/local/install/cif2cif
-    for PKG in ciftbx cif2cif
-    do
-        wget http://www.bernstein-plus-sons.com/cgi-bin/yaya/decomp.cgi/NDB/mmcif/software/ciftbx_4.1.0/$PKG.cshar
-        csh $PKG.cshar
-        ( cd $PKG.src && make )
-    done
-    cd /usr/local/bin
-    ln -s /usr/local/install/cif2cif/cif2cif.src/cif2cif
+    (
+        mkdir --parents /usr/local/install/cif2cif && cd /usr/local/install/cif2cif
+        for PKG in ciftbx cif2cif
+        do
+            wget http://www.bernstein-plus-sons.com/cgi-bin/yaya/decomp.cgi/NDB/mmcif/software/ciftbx_4.1.0/$PKG.cshar
+            csh $PKG.cshar
+            ( cd $PKG.src && make )
+        done
+        cd /usr/local/bin
+        ln -s /usr/local/install/cif2cif/cif2cif.src/cif2cif
+    )
 
     # crystcif-parse
     apt-get install --yes npm
-    mkdir --parents /usr/local/install/crystcif-parse && cd /usr/local/install/crystcif-parse
-    npm install crystcif-parse
-    cd /usr/local/bin
-    ln -s /usr/local/install/crystcif-parse/node_modules/crystcif-parse/bin/validate.js
+    (
+        mkdir --parents /usr/local/install/crystcif-parse && cd /usr/local/install/crystcif-parse
+        npm install crystcif-parse
+        cd /usr/local/bin
+        ln -s /usr/local/install/crystcif-parse/node_modules/crystcif-parse/bin/validate.js
+    )
 
     # STAR::Parser is installed from the IUCr website
     apt-get install --yes cpanminus
-    mkdir /tmp/starparser && cd /tmp/starparser
-    wget https://www.iucr.org/__data/iucr/cif/software/starparser/STAR-Parser-0.59.tar.gz
-    cpanm STAR-Parser-0.59.tar.gz
-    tar -xf STAR-Parser-0.59.tar.gz
-    cp STAR-Parser-0.59/bin/parse.pl /usr/local/bin/star-parse
-    sed -i 's/\/usr\/local\/bin\/perl/\/usr\/bin\/perl/' /usr/local/bin/star-parse
-    cd
-    rm -rf /tmp/starparser
+    (
+        mkdir /tmp/starparser && cd /tmp/starparser
+        wget https://www.iucr.org/__data/iucr/cif/software/starparser/STAR-Parser-0.59.tar.gz
+        cpanm STAR-Parser-0.59.tar.gz
+        tar -xf STAR-Parser-0.59.tar.gz
+        cp STAR-Parser-0.59/bin/parse.pl /usr/local/bin/star-parse
+        sed -i 's/\/usr\/local\/bin\/perl/\/usr\/bin\/perl/' /usr/local/bin/star-parse
+        rm -rf /tmp/starparser
+    )
 
     # vcif
-    mkdir --parents /usr/local/install/vcif && cd /usr/local/install/vcif
-    wget https://www.iucr.org/resources/cif/software/archived/vcif-1.2/vcif-1.2.2.tar.gz
-    tar -xf vcif-1.2.2.tar.gz && rm vcif-1.2.2.tar.gz
-    cd vcif-1.2.2
-    make
-    cd /usr/local/bin
-    ln -s /usr/local/install/vcif/vcif-1.2.2/vcif
+    (
+        mkdir --parents /usr/local/install/vcif && cd /usr/local/install/vcif
+        wget https://www.iucr.org/resources/cif/software/archived/vcif-1.2/vcif-1.2.2.tar.gz
+        tar -xf vcif-1.2.2.tar.gz && rm vcif-1.2.2.tar.gz
+        cd vcif-1.2.2
+        make
+        cd /usr/local/bin
+        ln -s /usr/local/install/vcif/vcif-1.2.2/vcif
+    )
 
     # zinc
-    apt-get install --yes bison
-    mkdir --parents /usr/local/install/zinc && cd /usr/local/install/zinc
-    wget https://www.iucr.org/__data/iucr/cif/software/zinc/zinc.tar.Z
-    tar -xf zinc.tar.Z && rm zinc.tar.Z
-    make CFLAGS='-Wno-implicit-int -Wno-implicit-function-declaration -Wno-return-mismatch'
-    cd /usr/local/bin
-    ln -s /usr/local/install/zinc/cifZinc
+    apt-get install --yes bison gcc
+    (
+        mkdir --parents /usr/local/install/zinc && cd /usr/local/install/zinc
+        wget https://www.iucr.org/__data/iucr/cif/software/zinc/zinc.tar.Z
+        tar -xf zinc.tar.Z && rm zinc.tar.Z
+        patch Makefile < /usr/local/CIF-parsers/patches/zinc.diff
+        make CFLAGS='-Wno-implicit-int -Wno-implicit-function-declaration -Wno-return-mismatch'
+        cd /usr/local/bin
+        ln -s /usr/local/install/zinc/cifZinc
+    )

@@ -1,0 +1,4 @@
+17c17
+< 	gcc -c cifCat.c
+---
+> 	gcc -c $(CFLAGS) cifCat.c
