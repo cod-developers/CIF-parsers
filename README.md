@@ -47,6 +47,7 @@ Structure
 Drivers for parsers are located at [1.1/drivers/](1.1/drivers/) and [2.0/drivers/](2.0/drivers/).
 Tests are located at [1.1/tests/](1.1/tests/) and [2.0/tests/](2.0/tests/).
 Tables with the results are located in relative ``outputs/table.tex`` and ``outputs/table.html`` files.
+Versions are listed in [versions.tab](versions.tab).
 
 Reporting and Contribution
 --------------------------
