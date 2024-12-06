@@ -50,6 +50,6 @@ From: debian:unstable
     mkdir --parents /usr/local/install/zinc && cd /usr/local/install/zinc
     wget https://www.iucr.org/__data/iucr/cif/software/zinc/zinc.tar.Z
     tar -xf zinc.tar.Z && rm zinc.tar.Z
-    make
+    make CFLAGS='-Wno-implicit-int -Wno-implicit-function-declaration -Wno-return-mismatch'
     cd /usr/local/bin
     ln -s /usr/local/install/zinc/cifZinc
