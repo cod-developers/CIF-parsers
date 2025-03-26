@@ -1,0 +1,1 @@
+../../../externals/cif_api/test-data/table_data.cif

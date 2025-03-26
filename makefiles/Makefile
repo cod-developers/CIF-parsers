@@ -6,7 +6,8 @@ TESTS = $(shell find $(INP_DIR)/ -name .svn -prune \
             -o -name runtests -prune \
             -o -name \*.tsv -prune \
             -o -name \*.md -prune \
-            -o -type f -print)
+            -o -type f -print \
+            -o -type l -print)
 
 OUTPUTS = $(sort $(TESTS:$(INP_DIR)/%=$(OUT_DIR)/%.out))
 

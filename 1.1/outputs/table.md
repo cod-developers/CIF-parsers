@@ -21,6 +21,14 @@ Merkys2016/value-immediately-following-textfield.cif |  |  |  |  | ERROR |  |  |
 Merkys2016/value-starting-with-bracket.cif | WARNING |  |  |  | ERROR |  |  | ERROR |  |  |  |  |  |  | 
 Merkys2016/value-starting-with-dollar.cif | ERROR |  |  |  | ERROR |  |  | ERROR | ERROR |  | ERROR |  |  |  | 
 Merkys2016/wrong-number-of-loop-values.cif | ERROR | ERROR | WARNING | ERROR | ERROR |  | ERROR | ERROR | ERROR | ERROR | ERROR |  |  | ERROR | 
+cif_api/10.cif | ERROR |  | ERROR | ERROR | ERROR | ERROR | ERROR | ERROR | ERROR |  | ERROR |  |  | ERROR | --
+cif_api/bom.cif |  |  | ERROR |  |  | ERROR | ERROR |  |  |  | ERROR |  |  | ERROR | ERROR
+cif_api/cif11_unquoted.cif | WARNING |  |  |  | ERROR |  |  |  |  |  |  |  |  |  | 
+cif_api/cif1_invalid.cif | WARNING |  |  |  | ERROR |  |  | ERROR |  |  |  |  |  |  | 
+cif_api/cif1_quoting.cif |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+cif_api/comment_only.cif |  |  |  |  |  |  | ERROR |  |  |  |  |  |  | WARNING | 
+cif_api/empty.cif |  |  |  |  |  | ERROR | ERROR |  |  |  |  |  |  | WARNING | 
+cif_api/ver1.cif |  |  |  |  |  |  | ERROR |  |  |  |  |  |  | WARNING | 
 ciftest1/ciftest0 |  |  |  |  |  | ERROR | ERROR |  |  |  |  |  |  | WARNING | 
 ciftest1/ciftest1 |  |  |  |  |  |  | ERROR |  |  |  |  |  |  | WARNING | 
 ciftest1/ciftest10 | ERROR | ERROR | WARNING | ERROR | ERROR |  | ERROR | ERROR | ERROR | ERROR | ERROR |  |  | ERROR | 
