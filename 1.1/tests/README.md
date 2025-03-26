@@ -1,6 +1,8 @@
 Test suites for CIF v1.1
 ========================
 
+* [cif_api/](cifapi/) –
+  syntax suite developed for [cif_api](https://github.com/COMCIFS/cif_api);
 * [ciftest1/](ciftest1/) –
   syntax test suite, originally developed for CIF v1.0
   ([website](http://www.iucr.org/resources/cif/software/archived/ciftest1));
