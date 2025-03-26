@@ -1,12 +1,8 @@
 #!/bin/bash
 
-TMP_DIR="${TMPDIR}"
-BASENAME="$(basename $0)"
+TMP_FILE=$(mktemp)
 
-test -z "${TMP_DIR}" && TMP_DIR="."
-TMP_FILE="${TMP_DIR}/tmp-${BASENAME}-$$"
-
-timeout 30 cif2cif "$@" > /dev/null 2>${TMP_FILE}
+timeout 30 cif2cif "$@" > /dev/null 2> $TMP_FILE
 
 if [ "$?" == 124 ]
 then
@@ -23,4 +19,4 @@ else
     fi
 fi
 
-rm "${TMP_FILE}"
+rm -f $TMP_FILE
