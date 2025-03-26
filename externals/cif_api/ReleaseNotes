@@ -1,0 +1,62 @@
+CIF_API 0.4.2 Release Notes
+---------------------------
+
+Version 0.4.2 of the CIF API is a maintenance release, principally addressing
+bugs and improving performance of the core CIF API library and its accompanying
+example programs and tools.  Notable changes include:
+
+ - New feature: cif_linguist now preserves whitespace and comments
+ - Improvement: modified SQLite usage for significant memory savings and a slight
+                performance gain.
+ - Added pkg-config support
+ - Added an RPM spec file to the distribution
+ - Bug fix: the numeric formatter incorrectly handled the case where all
+            significant figures are rounded away.
+ - Bug fix: the parser accepted "_" as a data name
+ - Bug fix: cif_linguist consistently crashed when outputting loop headers
+ - Bug fix: several bug fixes in cif_analyze_string()
+
+
+CIF_API 0.4.1 Release Notes
+---------------------------
+
+Version 0.4.1 of the CIF API is a maintenance release, principally addressing
+bugs and improving performance of the core CIF API library and its accompanying
+example programs and tools.  Notable changes include:
+
+ - Bug fix: the numeric formatter incorrectly handled the case where all
+            significant figures are rounded away.
+ - Bug fix: a lone underscore (_) was generally accepted as a valid data name
+
+
+CIF_API 0.4.0 Release Notes
+---------------------------
+
+Version 0.4.0 of the CIF API is a production release.  Significant changes
+relative to the previous release (0.3.0) include:
+
+ - Added experimental program cif_linguist.
+ - Modified char vs. numb handling in the parser
+ - Added the 'quoted' attribute to data values, and implicit and explicit
+   conversions between quoted and unquoted forms.
+ - Refactored to provide public utility function cif_analyze_string()
+
+
+CIF API 0.3.0 Release Notes
+---------------------------
+
+Version 0.3.0 of the CIF API is a production release.  Significant changes
+relative to the previous release (0.2.0) include:
+
+ - Type names have been changed.
+   The implementation had adopted the convention of assigning type names ending
+   in suffix '_t', but all such names are reserved by POSIX.  These names
+   were changed by appending a 'p', so that the suffix is now '_tp'.  This
+   does not affect binary compatibility, but it does affect source
+   compatibility.
+ - Parse options were added to enable parsing ancient CIFs that use vertical
+   tabs as inline whitespace and/or form feeds as line terminators.
+ - Added function cif_get_api_version(), which does what its name suggests.
+ - Fixed several minor bugs and portability issues observed in the beta-only
+   release 0.2.0.
+

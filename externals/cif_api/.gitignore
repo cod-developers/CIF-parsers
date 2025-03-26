@@ -1,0 +1,38 @@
+# Eclipse workspace files
+/.autotools
+/.cproject
+/.project
+/.settings
+
+# Build artifacts
+/autom4te.cache
+.deps/
+.dirstamp
+.libs/
+*.lo
+*.log
+*.o
+/config.h
+/config.status
+/Doxyfile
+/libtool
+Makefile
+stamp-h1
+/src/internal/schema.h
+/src/internal/version.h
+
+# Target files
+*.la
+/*.gz
+/dox-html/
+/dox-man/
+/misc/libcif.pc
+/src/cif2_syncheck
+/src/cif2_table1
+/src/cif2_table3
+/src/cif2_addauthor
+/src/cif_linguist
+
+# General working files
+*.swp
+gmon.out

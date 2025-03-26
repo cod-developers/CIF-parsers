@@ -1,0 +1,207 @@
+CIF API Change Log
+
+Version 0.4.3
+* Updated the RPM spec
+  Updated ICU pkgconfig dependencies in the RPM spec file.
+* Fixed a regression in parsing of unquoted data values
+  Values presented unquoted in a CIF 1 document were rejected if they did
+  not meet CIF 2 requirements for unquoted values, which are stricter.
+  They are now accepted, but treated internally as if they had been presented
+  quoted.
+* Added function cif_value_try_unquoted()
+  It's like cif_value_set_unquoted(), but is silently ineffective at
+  converting values to unquoted when that is disallowed by CIF 2 but would
+  have been allowed by earlier CIF versions.
+
+Version 0.4.2
+* Added a pkg-config description
+  Added a template for a pkg-config .pc file describing libcif.  It is filled
+  by the configure script and the resulting .pc file is installed by 'make
+  install'.
+* Added an RPM spec file
+  Added a spec file for building and installing the CIF API software via RPM.
+  Both a 'configure' template for the spec file and a copy of the spec file
+  itself are included in the misc/ subdirectory.
+* SQLite usage improvements
+  Switched from a default UTF-16 database to default UTF-8 for considerable
+  space savings and (surprisingly) approximately 2% faster performance.
+* Unit tests and bug fixes for cif_analyze_string()
+  Implemented unit tests for function cif_analyze_string(), and fixed several
+  bugs that they revealed.  (Issues number 4, 5, 6, 7, and 8.)
+* Fixed a bug in cif_linguist's handling of loop headers
+  Fixed a flaw in cif_linguist in which it failed to output loop headers
+  correctly (issue 9).
+* Fixed a regression in the parser's recovery behavior for invalid values
+  The addition in v0.4.0 of a persistent distinction between quoted and
+  unquoted values caused a regression in the parser's behavior when it
+  encounters an unquoted value of a form that CIF does not permit.  That
+  bug is fixed, restoring the parser's error recovery behavior of accepting
+  the value.  Such values are marked as if they had been parsed quoted.
+* Made cif_linguist preserve whitespace and comments
+  In a substantial revision to cif_linguist, supported by small changes to the
+  parser's usage of whitespace callbacks, made cif_linguist preserve
+  whitespace abd comments when it translates a file.
+* Fixed a build system bug related to finding ICU
+  The 'configure' program failed to determine the correct build options for
+  ICU support in the event that the ICU headers were not available in the
+  default include path (even though it correctly determined where to find
+  them).  The problem is resolved in this version.
+
+Version 0.4.1
+* Added '-f' fast mode option to cif2_syncheck
+  If the -f option is passed to cif2_syncheck then it runs the parser in
+  syntax-only mode, with no data-handling callbacks.  This turns out to be
+  about 200 times faster (literally), but does not detect duplicate data
+  names, frame codes, or block codes.  This option was motivated by the
+  example parser provided with cctbx::ucif, which operates exactly the
+  same way.
+* Added support for SQLite memory-based mode
+  Added code protected by conditional-compilation directives to cif.c.  When
+  enabled, CIF storage will be handled by SQLite in-memory databases instead
+  of SQLite temporary databases.  Enabling this mode provides a parse-speed
+  advantage advantage on the order of 35%, but removes automatic spillover
+  to the file system.  The CIF API's SQLite form of CIF data is many times
+  larger than CIF's native text form, so spillover can be very important.
+  The build system intentionally provides no direct support for enabling
+  in-memory mode.
+
+Version 0.4.0
+* Added CIF 1.1-format output
+  Previously, the CIF API could read either CIF 1.1 format or CIF 2.0 format,
+  but on the output side, it could write only CIF 2.0 format.  A write option
+  has been defined (the first one, though the framework for it already
+  existed) to enable users to select CIF 1.1 output.
+* Switched to preferring line folding for text-field escaping
+  When the trimmed first line of a text field ends with a backslash in
+  CIF 2.0 output mode, or when the trimmed first line consists of a single
+  backslash in CIF 1.1 mode, the text-field value must somehow be escaped to
+  prevent readers from interpreting the field as being prefixed and / or
+  folded.  Prefixing was previously used for that purpose, but to better
+  support CIF 1.1, line folding is now used instead.  (Prefixing is performed
+  only if the field value contains a newline / semicolon digraph.)
+* Text-field output fixes
+  Fixed at least two bugs in the text-field output routine, which now has more
+  prominence.  (1) Previously, completely empty lines were filtered out of
+  text-field values when line-folding or text prefixing was in effect; they
+  are now preserved.  (2) Line-folding was not performed correctly for lines
+  that (after trimming) ended with a backslash; correct folding is now
+  implemented.
+* Added automatic char-to-numb coercion
+  Updated cif_value_get_number() and cif_value_get_su() to automatically
+  convert the provided value object to numeric kind if it is initially of
+  character kind and such a coercion is possible.  Changed the parser to
+  avoid distinguishing NUMB values from CHAR values at parse time, relying
+  instead on coercing values as needed, later.
+* Added a value property tracking quoted status
+  Longstanding CIF conventions establish that the interpretation of a data
+  value can depend on whether it is presented whitespace-delimited or in one
+  of the other forms.  They contain some specific examples of how that
+  distinction is conventionally used, but nothing restricts the distinction to
+  those cases.  The CIF API now provides a modifiable value property that
+  designates whether a value is consider 'quoted' or not, provides additional
+  coercions around some changes to that attribute's value, and where possible,
+  honors that attribute on output.
+* Added EXPERIMENTAL program cif_linguist
+  Added CIF format translation program cif_linguist to the distribution.
+  It is only lightly tested, and it has several notable limitations, such
+  as stripping all CIF comments in the course of translation.
+* Added public functions and header
+  Added new public functions cif_analyze_string() and
+  cif_is_reserved_string().  These are used internally for making decisions
+  about value coercion and formatting, but they are also made accessible for
+  library users.  Added new public header cif_error.h declaring global
+  variables provided by the CIF API library that contain
+  programmatically-accessible text explaining each CIF error code.
+
+Version 0.3.0
+* Changed type names
+  Because POSIX reserves type names ending in _t, the names of all types
+  provided by the CIF API have been changed to use suffix _tp instead.
+* Provisions for recent ICU
+  Versions of ICU more recent than the one against which the library was
+  initially developed incorporate a change that causes a host of
+  const-correctness warnings to be emitted during compilation, mostly from the
+  tests.  These issues were resolved with respect to ICU 55-1 (and the code is
+  still fine with respect to ICU 4.2.1).
+* Building on Win32 / Win64
+  Updated for building as a native DLL on Windows (Win32 / Win64).  The
+  MinGW-w64 toolchain was specifically targeted, but overall the changes were
+  few, and the code is overall very portable, so it is likely that the result
+  could be adapted for other Windows toolchains with comparative ease.
+* Bulding on OS X
+  Not much was really needed to provide for building on OS X, but a small
+  build system change cleaned up an issue encountered when relying on Fink for
+  dependencies.
+* Support for non-standard whitespace and EOL
+  Added parser options enabling it to recognize some program-specified
+  additional characters as having significance as CIF whitespace or
+  end-of-line.  Aimed mainly at early CIFs that use vertical tabs and / or
+  form feeds for whitespace and end-of-line purposes, respectively, this
+  feature is in fact a bit more general than that.
+* Added function cif_get_api_version()
+  Added an API function cif_get_api_version() to enable client applications
+  to determine which version of the API they are accessing.
+
+Version 0.2.0.3
+* Bug in cif_loop_add_item()
+  Fixed a bug in which cif_loop_add_item() did not correctly handle a NULL
+  default value.
+* Documentation of packet iterator effects
+  Documentation of the possible negative effects and constraints of open
+  packet iterators was added to the general packet iterator description and
+  to the docs of cif_loop_get_packets().
+* Fixed a narrow text-folding failure case
+  The text block line-folding code used by cif_write() could produce invalid
+  output because it failed to protect against lines being folded immediately
+  before a semicolon (only a problem when not also prefixing).  That issue is
+  now resolved.
+
+Version 0.2.0.2
+* Issues with ssize_t
+  Fixed a header declaration and build configuration issue resulting in
+  declarations of type ssize_t not being visible in some places where it is
+  used.  Observed on Debian.
+* ICU pkg-config package names
+  Fixed a build configuration issue arising on Debian, where the pkg-config
+  data for ICU are split among multiple logical packages.
+* Tests performing exact floating-point comparisons
+  Fixed a test implementation issue revolving around exact FP comparisons
+  being performed in certain places where approximate comparisons were needed.
+  (The tests still use exact comparison where exact agreement is expected.)
+* Long time to handle many-packet loops
+  Fixed a performance issue associated with adding packets to loops already
+  having many packets.
+* Minor reorganization
+  Merged macros for Unicode code point constants used in different source
+  files into a common location (src/internal/values.h).  Added consistent
+  source comments to the internal headers indicating that they are not
+  intended to be installed.  Changed the scope of one 'extern "C"' block.
+  Added a few source comments.
+* Added CIF_MEMORY_ERROR
+  Added error code CIF_MEMORY_ERROR, and updated substantially all functions
+  that perform dynamic memory allocation to raise that error code in the
+  event of a memory allocation failure.
+* Removed the build dependency on a line-counting command
+  Updated the build system -- in particular, the part that generates a header
+  file from the database schema -- to remove the need to count lines.  The
+  generated header is slightly different, and the code that uses it is
+  adjusted to match.
+
+Version 0.2.0.1
+* C++ compatibility in cif_cstr_to_ustr()
+  Fixed a C++ compatibility issue in cif_cstr_to_ustr()
+* Configure script bug
+  Fixed an error in the configuration program, related to the
+  --enable-c89-enforcement option
+
+Version 0.2.0
+* Initial full (beta test) release
+
+
+Known Issues
+* The SQLite back end is slow-ish.
+  So far this performance issue is exhibited most clearly by parsing large
+  (hundreds of kB) CIFs.  Profiling shows virtually all runtime being consumed
+  by SQLite.
+
+
