@@ -3,6 +3,7 @@ From: debian:unstable
 
 %files
     patches /usr/local/CIF-parsers/patches
+    downloads /usr/local/CIF-parsers/downloads
 
 %post
     apt-get update
@@ -35,8 +36,14 @@ From: debian:unstable
     # STAR::Parser is installed from the IUCr website
     apt-get install --yes cpanminus
     (
-        mkdir /tmp/starparser && cd /tmp/starparser
-        wget https://www.iucr.org/__data/iucr/cif/software/starparser/STAR-Parser-0.59.tar.gz
+        DOWNLOAD_DIR="/usr/local/CIF-parsers/downloads"
+        mkdir --parents /tmp/starparser && cd /tmp/starparser
+        if ! [ -f "${DOWNLOAD_DIR}"/STAR-Parser-0.59.tar.gz ]
+        then
+                wget https://www.iucr.org/__data/iucr/cif/software/starparser/STAR-Parser-0.59.tar.gz
+        else
+                cp -av "${DOWNLOAD_DIR}"/STAR-Parser-0.59.tar.gz /tmp/starparser
+        fi
         cpanm STAR-Parser-0.59.tar.gz
         tar -xf STAR-Parser-0.59.tar.gz
         cp STAR-Parser-0.59/bin/parse.pl /usr/local/bin/star-parse
@@ -46,8 +53,14 @@ From: debian:unstable
 
     # vcif
     (
+        DOWNLOAD_DIR="/usr/local/CIF-parsers/downloads"
         mkdir --parents /usr/local/install/vcif && cd /usr/local/install/vcif
-        wget https://www.iucr.org/resources/cif/software/archived/vcif-1.2/vcif-1.2.2.tar.gz
+        if ! [ -f "${DOWNLOAD_DIR}"/vcif-1.2.2.tar.gz ]
+        then
+                wget https://www.iucr.org/resources/cif/software/archived/vcif-1.2/vcif-1.2.2.tar.gz
+        else
+                cp -av "${DOWNLOAD_DIR}"/vcif-1.2.2.tar.gz /usr/local/install/vcif
+        fi
         tar -xf vcif-1.2.2.tar.gz && rm vcif-1.2.2.tar.gz
         cd vcif-1.2.2
         make
@@ -58,8 +71,14 @@ From: debian:unstable
     # zinc
     apt-get install --yes bison gcc
     (
+        DOWNLOAD_DIR="/usr/local/CIF-parsers/downloads"
         mkdir --parents /usr/local/install/zinc && cd /usr/local/install/zinc
-        wget https://www.iucr.org/__data/iucr/cif/software/zinc/zinc.tar.Z
+        if ! [ -f "${DOWNLOAD_DIR}"/zinc.tar.Z ]
+        then
+                wget https://www.iucr.org/__data/iucr/cif/software/zinc/zinc.tar.Z
+        else
+                cp -av "${DOWNLOAD_DIR}"/zinc.tar.Z /usr/local/install/zinc
+        fi
         tar -xf zinc.tar.Z && rm zinc.tar.Z
         patch Makefile < /usr/local/CIF-parsers/patches/zinc.diff
         make CFLAGS='-Wno-implicit-int -Wno-implicit-function-declaration -Wno-return-mismatch'
