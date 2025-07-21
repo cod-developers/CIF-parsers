@@ -28,3 +28,18 @@ open-babel
 pymatgen
 vcif ERROR
 zinc ERROR
+PyCIFRW ERROR
+STAR ERROR
+ase ERROR
+cif2cif ERROR
+cif_linguist ERROR
+ciftools-java ERROR
+cifxom ERROR
+codtools ERROR
+codtools-fix ERROR
+crystcif-parse ERROR
+gemmi ERROR
+open-babel
+pymatgen
+vcif ERROR
+zinc ERROR

@@ -28,3 +28,18 @@ open-babel
 pymatgen
 vcif WARNING
 zinc
+PyCIFRW ERROR
+STAR
+ase
+cif2cif WARNING
+cif_linguist
+ciftools-java
+cifxom
+codtools WARNING
+codtools-fix
+crystcif-parse
+gemmi
+open-babel
+pymatgen
+vcif WARNING
+zinc
