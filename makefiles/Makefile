@@ -25,6 +25,7 @@ table tables: $(TABLE_HTML) $(TABLE_MD) $(TABLE_TEX)
 benchmark: $(BENCHMARK_OUT)
 
 ${OUT_DIR}/%.out: ${INP_DIR}/%
+	> $@ # Make sure we start with an empty file
 	for PARSER in $$(ls -1 drivers/* | sort); \
     do \
         echo $$(basename $${PARSER}) $$($${PARSER} $<) >> $@; \
