@@ -13,18 +13,3 @@ open-babel
 pymatgen WARNING
 vcif ERROR
 zinc ERROR
-PyCIFRW
-STAR
-ase ERROR
-cif2cif ERROR
-cif_linguist
-ciftools-java ERROR
-cifxom
-codtools ERROR
-codtools-fix WARNING
-crystcif-parse
-gemmi ERROR
-open-babel
-pymatgen WARNING
-vcif ERROR
-zinc ERROR

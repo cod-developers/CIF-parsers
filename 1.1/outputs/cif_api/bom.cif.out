@@ -13,33 +13,3 @@ open-babel
 pymatgen
 vcif ERROR
 zinc ERROR
-PyCIFRW
-STAR
-ase ERROR
-cif2cif
-cif_linguist
-ciftools-java ERROR
-cifxom ERROR
-codtools
-codtools-fix
-crystcif-parse
-gemmi ERROR
-open-babel
-pymatgen
-vcif ERROR
-zinc ERROR
-PyCIFRW
-STAR
-ase ERROR
-cif2cif
-cif_linguist
-ciftools-java ERROR
-cifxom ERROR
-codtools
-codtools-fix
-crystcif-parse
-gemmi ERROR
-open-babel
-pymatgen
-vcif ERROR
-zinc ERROR
